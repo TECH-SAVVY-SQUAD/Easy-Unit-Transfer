@@ -10,26 +10,20 @@ import UIKit
 
 class AddWeightUintUITableViewCell: UITableViewCell {
     
-    //to do
-    var country = "US"
-    
-    var title = ""
-    
     @IBOutlet weak var AddWeightUnitCellContryUILabel: UILabel!
     @IBOutlet weak var AddWeightUnitTitleUILabel: UILabel!
+    var unit: Unit = Unit()
     
-    func loadCell(country: String, title: String) {
-        self.country = country
-        self.title = title
-        AddWeightUnitCellContryUILabel.text = country
-        AddWeightUnitTitleUILabel.text = title
+    func loadCell(unit: Unit) {
+        self.unit = unit
+        AddWeightUnitCellContryUILabel.text = unit.country
+        AddWeightUnitTitleUILabel.text = unit.symbol
     }
 }
 
 class AddWeightUIViewController: UITableViewController {
-
-    var weightConverter = WeightConverter.getWeightConverter()
     
+    var weightConverter = WeightUnitConverter.getInstance()
     
     @IBOutlet weak var t: UITableView!
     
@@ -53,21 +47,21 @@ class AddWeightUIViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return weightConverter.getAllUnitArray().count
+        return Units.weightUnits.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> AddWeightUintUITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("AddWeightUnitCell") as! AddWeightUintUITableViewCell
-        let title = weightConverter.getAllUnitArray()[indexPath.row].symbol
-        cell.loadCell("US", title: title)
+        let unit = Units.weightUnits[indexPath.row]
+        cell.loadCell(unit)
         
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell : AddWeightUintUITableViewCell? = self.tableView.cellForRowAtIndexPath(indexPath) as! AddWeightUintUITableViewCell?
-        weightConverter.addUnit(cell!.title)
+        weightConverter.add(cell!.unit)
         dismissViewControllerAnimated(true, completion: nil)
     }
     

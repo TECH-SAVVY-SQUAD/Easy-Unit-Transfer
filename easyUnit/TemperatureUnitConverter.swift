@@ -8,40 +8,20 @@
 
 import Foundation
 
-class TemperatureUnitConverter {
+class TemperatureUnitConverter: Converter{
     
-    class var temperatureUnits: [String:Unit] {
-        var units = [String:Unit]()
-        let celsius = Unit(symbol: "˚C", name: "Celsius",category: 4,from: {$0}, to: {$0}, country: "SI")
-        let fahrenheit = Unit(symbol: "F", name: "Fahrenheit",category: 4,from: {($0 - 32)*5/9}, to: {$0 * 9/5 + 32}, country: "US")
-        units[celsius.symbol] = celsius
-        units[fahrenheit.symbol] = fahrenheit
-        return units;
+    static private var temperatureUnitConverter = TemperatureUnitConverter()
+    
+    private override init() {
+        super.init()
+        // TODO
+        // Check first is vaild or not
+        super.sourceUnit = Units.temperatureUnits.first!
+        super.targetUnits = Units.temperatureUnits.filter({$0.symbol == "F"})
     }
     
-    private init() {
+    static func getInstance() -> TemperatureUnitConverter {
+        return temperatureUnitConverter
     }
-    
-    
-    // convert
-    static func convert(from: String, to: String, value: Double) -> Double {
-        if let unit1 = self.temperatureUnits[from] {
-            if let unit2 = self.temperatureUnits[to] {
-                return unit2.to(unit1.from(value))
-            }
-        }
-        return -1
-    }
-    
-    static func getUnitsList(except: String) -> [Unit] {
-        var units = [Unit]()
-        for(symbol,unit) in temperatureUnits {
-            if symbol != except {
-                units.append(unit)
-            }
-        }
-        return units
-    }
-    
     
 }

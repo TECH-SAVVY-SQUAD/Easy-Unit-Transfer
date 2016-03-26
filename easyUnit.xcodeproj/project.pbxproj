@@ -18,10 +18,15 @@
 		94345D4D1C7CD21900655246 /* LengthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94345D4C1C7CD21900655246 /* LengthViewController.swift */; };
 		946896711C7EDFE600B70073 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946896701C7EDFE600B70073 /* WeightViewController.swift */; };
 		94AA27601CA38D35002DB913 /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA275F1CA38D35002DB913 /* Units.swift */; };
+		94AA27631CA4F8FD002DB913 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA27621CA4F8FD002DB913 /* Converter.swift */; };
+		94AA27681CA50C46002DB913 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA27671CA50C46002DB913 /* Config.swift */; };
+		94AA276A1CA51086002DB913 /* WeightUnitConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA27691CA51086002DB913 /* WeightUnitConverter.swift */; };
+		94AA276C1CA65531002DB913 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA276B1CA65531002DB913 /* Category.swift */; };
+		94AA276E1CA65C66002DB913 /* LengthUnitConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA276D1CA65C66002DB913 /* LengthUnitConverter.swift */; };
+		94AA27701CA65D57002DB913 /* VolumeUnitConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA276F1CA65D57002DB913 /* VolumeUnitConverter.swift */; };
 		94BE30EB1C9E235500C133F7 /* TemperatureUnitConverterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE30E91C9E235500C133F7 /* TemperatureUnitConverterTest.swift */; };
 		94BE30ED1C9E24F100C133F7 /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE30EC1C9E24F100C133F7 /* TemperatureViewController.swift */; };
 		94BE30EF1C9E2A6700C133F7 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE30EE1C9E2A6700C133F7 /* Unit.swift */; };
-		94E6EF711C7FA7A5004ACA8A /* WeightConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E6EF701C7FA7A5004ACA8A /* WeightConverter.swift */; };
 		94E6EF771C806060004ACA8A /* AddWeightUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E6EF761C806060004ACA8A /* AddWeightUIViewController.swift */; };
 		94E6EF791C822529004ACA8A /* ShoeSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E6EF781C822529004ACA8A /* ShoeSizeViewController.swift */; };
 		94E6EF7B1C823ABF004ACA8A /* ShoeSizeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E6EF7A1C823ABF004ACA8A /* ShoeSizeConverter.swift */; };
@@ -62,10 +67,15 @@
 		94345D4C1C7CD21900655246 /* LengthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LengthViewController.swift; sourceTree = "<group>"; };
 		946896701C7EDFE600B70073 /* WeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
 		94AA275F1CA38D35002DB913 /* Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
+		94AA27621CA4F8FD002DB913 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		94AA27671CA50C46002DB913 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		94AA27691CA51086002DB913 /* WeightUnitConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightUnitConverter.swift; sourceTree = "<group>"; };
+		94AA276B1CA65531002DB913 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		94AA276D1CA65C66002DB913 /* LengthUnitConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LengthUnitConverter.swift; sourceTree = "<group>"; };
+		94AA276F1CA65D57002DB913 /* VolumeUnitConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeUnitConverter.swift; sourceTree = "<group>"; };
 		94BE30E91C9E235500C133F7 /* TemperatureUnitConverterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureUnitConverterTest.swift; sourceTree = "<group>"; };
 		94BE30EC1C9E24F100C133F7 /* TemperatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
 		94BE30EE1C9E2A6700C133F7 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
-		94E6EF701C7FA7A5004ACA8A /* WeightConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightConverter.swift; sourceTree = "<group>"; };
 		94E6EF761C806060004ACA8A /* AddWeightUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWeightUIViewController.swift; sourceTree = "<group>"; };
 		94E6EF781C822529004ACA8A /* ShoeSizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoeSizeViewController.swift; sourceTree = "<group>"; };
 		94E6EF7A1C823ABF004ACA8A /* ShoeSizeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoeSizeConverter.swift; sourceTree = "<group>"; };
@@ -119,6 +129,8 @@
 		94345D191C7C383700655246 /* easyUnit */ = {
 			isa = PBXGroup;
 			children = (
+				94AA27641CA50BBA002DB913 /* Config */,
+				94AA27611CA4F8EA002DB913 /* ConverterModel */,
 				94AA275E1CA38C24002DB913 /* Unit */,
 				9468966D1C7E1A0F00B70073 /* Model */,
 				94345D1A1C7C383700655246 /* AppDelegate.swift */,
@@ -158,9 +170,7 @@
 		9468966D1C7E1A0F00B70073 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				94E6EF701C7FA7A5004ACA8A /* WeightConverter.swift */,
 				94E6EF7A1C823ABF004ACA8A /* ShoeSizeConverter.swift */,
-				9424D9811C9D007F004A5339 /* TemperatureUnitConverter.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -170,8 +180,29 @@
 			children = (
 				94BE30EE1C9E2A6700C133F7 /* Unit.swift */,
 				94AA275F1CA38D35002DB913 /* Units.swift */,
+				94AA276B1CA65531002DB913 /* Category.swift */,
 			);
 			name = Unit;
+			sourceTree = "<group>";
+		};
+		94AA27611CA4F8EA002DB913 /* ConverterModel */ = {
+			isa = PBXGroup;
+			children = (
+				9424D9811C9D007F004A5339 /* TemperatureUnitConverter.swift */,
+				94AA27691CA51086002DB913 /* WeightUnitConverter.swift */,
+				94AA27621CA4F8FD002DB913 /* Converter.swift */,
+				94AA276D1CA65C66002DB913 /* LengthUnitConverter.swift */,
+				94AA276F1CA65D57002DB913 /* VolumeUnitConverter.swift */,
+			);
+			name = ConverterModel;
+			sourceTree = "<group>";
+		};
+		94AA27641CA50BBA002DB913 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				94AA27671CA50C46002DB913 /* Config.swift */,
+			);
+			name = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,15 +339,20 @@
 			files = (
 				94345D4B1C7C396A00655246 /* VolumeViewController.swift in Sources */,
 				94AA27601CA38D35002DB913 /* Units.swift in Sources */,
+				94AA27631CA4F8FD002DB913 /* Converter.swift in Sources */,
+				94AA27681CA50C46002DB913 /* Config.swift in Sources */,
 				94345D4D1C7CD21900655246 /* LengthViewController.swift in Sources */,
+				94AA276A1CA51086002DB913 /* WeightUnitConverter.swift in Sources */,
 				94E6EF771C806060004ACA8A /* AddWeightUIViewController.swift in Sources */,
 				94345D1B1C7C383700655246 /* AppDelegate.swift in Sources */,
 				94E6EF7B1C823ABF004ACA8A /* ShoeSizeConverter.swift in Sources */,
+				94AA27701CA65D57002DB913 /* VolumeUnitConverter.swift in Sources */,
 				94E6EF791C822529004ACA8A /* ShoeSizeViewController.swift in Sources */,
 				94BE30EF1C9E2A6700C133F7 /* Unit.swift in Sources */,
-				94E6EF711C7FA7A5004ACA8A /* WeightConverter.swift in Sources */,
+				94AA276C1CA65531002DB913 /* Category.swift in Sources */,
 				9424D9821C9D007F004A5339 /* TemperatureUnitConverter.swift in Sources */,
 				946896711C7EDFE600B70073 /* WeightViewController.swift in Sources */,
+				94AA276E1CA65C66002DB913 /* LengthUnitConverter.swift in Sources */,
 				94BE30ED1C9E24F100C133F7 /* TemperatureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
