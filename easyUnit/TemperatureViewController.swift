@@ -7,20 +7,6 @@
 //
 
 import UIKit
-class TemperatureUnitCell: UITableViewCell {
-    @IBOutlet weak var TemperatureUITableViewCellTitle: UILabel!
-    @IBOutlet weak var TemperatureUITableViewCellValue: UILabel!
-    var unit: Unit = Unit()
-    var value: Double = 1.0
-    
-    func loadCell(unit: Unit, value: Double) {
-        TemperatureUITableViewCellTitle.text = unit.symbol
-        TemperatureUITableViewCellValue.text = NSString(format:Config.numberOfDigitString, value) as String
-        self.unit = unit
-        self.value = value
-    }
-}
-
 
 class TemperatureViewController: UIViewController, UITableViewDelegate {
     private var temperatureUnitConverter = TemperatureUnitConverter.getInstance()
@@ -59,9 +45,9 @@ class TemperatureViewController: UIViewController, UITableViewDelegate {
         return temperatureUnitConverter.targetUnits.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> TemperatureUnitCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UnitCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("UnitCell") as! TemperatureUnitCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("TemperatureUnitCell") as! UnitCell
         let unit = temperatureUnitConverter.targetUnits[indexPath.row]
         let value = temperatureUnitConverter.convert(temperatureUnitConverter.sourceUnit, TargetUnit: unit, value: temperatureUnitConverter.sourceValue)
         cell.loadCell(unit, value: value)
@@ -70,7 +56,7 @@ class TemperatureViewController: UIViewController, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell : TemperatureUnitCell? = self.tableView.cellForRowAtIndexPath(indexPath) as! TemperatureUnitCell?
+        let cell : UnitCell? = self.tableView.cellForRowAtIndexPath(indexPath) as! UnitCell?
         if let unit = cell?.unit {
             if let value = cell?.value {
                 let newUnit = temperatureUnitConverter.switchSourceUnit(unit, value: value)

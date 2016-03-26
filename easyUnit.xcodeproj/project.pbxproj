@@ -24,6 +24,7 @@
 		94AA276C1CA65531002DB913 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA276B1CA65531002DB913 /* Category.swift */; };
 		94AA276E1CA65C66002DB913 /* LengthUnitConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA276D1CA65C66002DB913 /* LengthUnitConverter.swift */; };
 		94AA27701CA65D57002DB913 /* VolumeUnitConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA276F1CA65D57002DB913 /* VolumeUnitConverter.swift */; };
+		94AA277B1CA6609D002DB913 /* UnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA277A1CA6609D002DB913 /* UnitCell.swift */; };
 		94BE30EB1C9E235500C133F7 /* TemperatureUnitConverterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE30E91C9E235500C133F7 /* TemperatureUnitConverterTest.swift */; };
 		94BE30ED1C9E24F100C133F7 /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE30EC1C9E24F100C133F7 /* TemperatureViewController.swift */; };
 		94BE30EF1C9E2A6700C133F7 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE30EE1C9E2A6700C133F7 /* Unit.swift */; };
@@ -73,6 +74,7 @@
 		94AA276B1CA65531002DB913 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		94AA276D1CA65C66002DB913 /* LengthUnitConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LengthUnitConverter.swift; sourceTree = "<group>"; };
 		94AA276F1CA65D57002DB913 /* VolumeUnitConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeUnitConverter.swift; sourceTree = "<group>"; };
+		94AA277A1CA6609D002DB913 /* UnitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitCell.swift; sourceTree = "<group>"; };
 		94BE30E91C9E235500C133F7 /* TemperatureUnitConverterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureUnitConverterTest.swift; sourceTree = "<group>"; };
 		94BE30EC1C9E24F100C133F7 /* TemperatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
 		94BE30EE1C9E2A6700C133F7 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
@@ -129,21 +131,21 @@
 		94345D191C7C383700655246 /* easyUnit */ = {
 			isa = PBXGroup;
 			children = (
+				94AA27791CA66053002DB913 /* Unitlist */,
+				94AA27781CA66033002DB913 /* components */,
+				94AA27771CA6600C002DB913 /* common */,
+				94AA27761CA65FAD002DB913 /* Shoesize */,
+				94AA27751CA65F8F002DB913 /* Length */,
+				94AA27741CA65F86002DB913 /* Volume */,
+				94AA27731CA65F7C002DB913 /* Temperature */,
+				94AA27721CA65F5F002DB913 /* Weight */,
 				94AA27641CA50BBA002DB913 /* Config */,
-				94AA27611CA4F8EA002DB913 /* ConverterModel */,
 				94AA275E1CA38C24002DB913 /* Unit */,
-				9468966D1C7E1A0F00B70073 /* Model */,
 				94345D1A1C7C383700655246 /* AppDelegate.swift */,
-				94345D4A1C7C396A00655246 /* VolumeViewController.swift */,
-				946896701C7EDFE600B70073 /* WeightViewController.swift */,
-				94345D4C1C7CD21900655246 /* LengthViewController.swift */,
 				94345D201C7C383700655246 /* Main.storyboard */,
 				94345D231C7C383700655246 /* Assets.xcassets */,
 				94345D251C7C383700655246 /* LaunchScreen.storyboard */,
 				94345D281C7C383700655246 /* Info.plist */,
-				94E6EF761C806060004ACA8A /* AddWeightUIViewController.swift */,
-				94E6EF781C822529004ACA8A /* ShoeSizeViewController.swift */,
-				94BE30EC1C9E24F100C133F7 /* TemperatureViewController.swift */,
 			);
 			path = easyUnit;
 			sourceTree = "<group>";
@@ -167,14 +169,6 @@
 			path = easyUnitUITests;
 			sourceTree = "<group>";
 		};
-		9468966D1C7E1A0F00B70073 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				94E6EF7A1C823ABF004ACA8A /* ShoeSizeConverter.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
 		94AA275E1CA38C24002DB913 /* Unit */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,24 +179,81 @@
 			name = Unit;
 			sourceTree = "<group>";
 		};
-		94AA27611CA4F8EA002DB913 /* ConverterModel */ = {
-			isa = PBXGroup;
-			children = (
-				9424D9811C9D007F004A5339 /* TemperatureUnitConverter.swift */,
-				94AA27691CA51086002DB913 /* WeightUnitConverter.swift */,
-				94AA27621CA4F8FD002DB913 /* Converter.swift */,
-				94AA276D1CA65C66002DB913 /* LengthUnitConverter.swift */,
-				94AA276F1CA65D57002DB913 /* VolumeUnitConverter.swift */,
-			);
-			name = ConverterModel;
-			sourceTree = "<group>";
-		};
 		94AA27641CA50BBA002DB913 /* Config */ = {
 			isa = PBXGroup;
 			children = (
 				94AA27671CA50C46002DB913 /* Config.swift */,
 			);
 			name = Config;
+			sourceTree = "<group>";
+		};
+		94AA27721CA65F5F002DB913 /* Weight */ = {
+			isa = PBXGroup;
+			children = (
+				946896701C7EDFE600B70073 /* WeightViewController.swift */,
+				94AA27691CA51086002DB913 /* WeightUnitConverter.swift */,
+			);
+			name = Weight;
+			sourceTree = "<group>";
+		};
+		94AA27731CA65F7C002DB913 /* Temperature */ = {
+			isa = PBXGroup;
+			children = (
+				9424D9811C9D007F004A5339 /* TemperatureUnitConverter.swift */,
+				94BE30EC1C9E24F100C133F7 /* TemperatureViewController.swift */,
+			);
+			name = Temperature;
+			sourceTree = "<group>";
+		};
+		94AA27741CA65F86002DB913 /* Volume */ = {
+			isa = PBXGroup;
+			children = (
+				94AA276F1CA65D57002DB913 /* VolumeUnitConverter.swift */,
+				94345D4A1C7C396A00655246 /* VolumeViewController.swift */,
+			);
+			name = Volume;
+			sourceTree = "<group>";
+		};
+		94AA27751CA65F8F002DB913 /* Length */ = {
+			isa = PBXGroup;
+			children = (
+				94345D4C1C7CD21900655246 /* LengthViewController.swift */,
+				94AA276D1CA65C66002DB913 /* LengthUnitConverter.swift */,
+			);
+			name = Length;
+			sourceTree = "<group>";
+		};
+		94AA27761CA65FAD002DB913 /* Shoesize */ = {
+			isa = PBXGroup;
+			children = (
+				94E6EF7A1C823ABF004ACA8A /* ShoeSizeConverter.swift */,
+				94E6EF781C822529004ACA8A /* ShoeSizeViewController.swift */,
+			);
+			name = Shoesize;
+			sourceTree = "<group>";
+		};
+		94AA27771CA6600C002DB913 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				94AA27621CA4F8FD002DB913 /* Converter.swift */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		94AA27781CA66033002DB913 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				94AA277A1CA6609D002DB913 /* UnitCell.swift */,
+			);
+			name = components;
+			sourceTree = "<group>";
+		};
+		94AA27791CA66053002DB913 /* Unitlist */ = {
+			isa = PBXGroup;
+			children = (
+				94E6EF761C806060004ACA8A /* AddWeightUIViewController.swift */,
+			);
+			name = Unitlist;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +401,7 @@
 				94E6EF791C822529004ACA8A /* ShoeSizeViewController.swift in Sources */,
 				94BE30EF1C9E2A6700C133F7 /* Unit.swift in Sources */,
 				94AA276C1CA65531002DB913 /* Category.swift in Sources */,
+				94AA277B1CA6609D002DB913 /* UnitCell.swift in Sources */,
 				9424D9821C9D007F004A5339 /* TemperatureUnitConverter.swift in Sources */,
 				946896711C7EDFE600B70073 /* WeightViewController.swift in Sources */,
 				94AA276E1CA65C66002DB913 /* LengthUnitConverter.swift in Sources */,

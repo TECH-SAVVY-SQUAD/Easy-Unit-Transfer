@@ -8,20 +8,6 @@
 
 import UIKit
 
-class WeightUITableViewCell: UITableViewCell {
-    @IBOutlet weak var WeightUITableViewCellTitle: UILabel!
-    @IBOutlet weak var WeightUITableViewCellValue: UILabel!
-    var unit: Unit = Unit()
-    var value = 1.0
-    
-    func loadCell(unit: Unit, value: Double) {
-        WeightUITableViewCellTitle.text = unit.symbol
-        WeightUITableViewCellValue.text = NSString(format:Config.numberOfDigitString,value) as String
-        self.unit = unit
-        self.value = value
-    }
-}
-
 class WeightViewController: UIViewController, UITableViewDelegate,UITextFieldDelegate {
     
     var weightConverter = WeightUnitConverter.getInstance()
@@ -42,8 +28,6 @@ class WeightViewController: UIViewController, UITableViewDelegate,UITextFieldDel
         // remove the navigation bar board
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        
-        currentUnitUILabel.text = weightConverter.sourceUnit.symbol
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,9 +43,9 @@ class WeightViewController: UIViewController, UITableViewDelegate,UITextFieldDel
         return weightConverter.targetUnits.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> WeightUITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UnitCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("UnitCell") as! WeightUITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("WeightUnitCell") as! UnitCell
         let unit = weightConverter.targetUnits[indexPath.row]
         let value = weightConverter.convert(weightConverter.sourceUnit, TargetUnit: unit, value: weightConverter.sourceValue)
         cell.loadCell(unit, value: value)
@@ -70,7 +54,7 @@ class WeightViewController: UIViewController, UITableViewDelegate,UITextFieldDel
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell : WeightUITableViewCell? = self.tableView.cellForRowAtIndexPath(indexPath) as! WeightUITableViewCell?
+        let cell : UnitCell? = self.tableView.cellForRowAtIndexPath(indexPath) as! UnitCell?
         if let unit = cell?.unit {
             if let value = cell?.value {
                 let newUnit = weightConverter.switchSourceUnit(unit, value: value)
@@ -87,7 +71,7 @@ class WeightViewController: UIViewController, UITableViewDelegate,UITextFieldDel
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        let cell : WeightUITableViewCell? = self.tableView.cellForRowAtIndexPath(indexPath) as! WeightUITableViewCell?
+        let cell : UnitCell? = self.tableView.cellForRowAtIndexPath(indexPath) as! UnitCell?
         if (editingStyle == UITableViewCellEditingStyle.Delete){
             if let unit = cell?.unit {
                 weightConverter.delete(unit)
@@ -118,7 +102,7 @@ class WeightViewController: UIViewController, UITableViewDelegate,UITextFieldDel
     }
     
     @IBAction func UIButtonAddWeightUnit(sender: UIBarButtonItem) {
-        performSegueWithIdentifier("AddWeightUnitSegue", sender: self)
+        performSegueWithIdentifier("AddUnitFromWeightSegue", sender: self)
     }
 }
 

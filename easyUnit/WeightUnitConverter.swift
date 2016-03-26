@@ -16,8 +16,9 @@ class WeightUnitConverter : Converter{
         super.init()
         // TODO
         // Check first is vaild or not
+        super.category = Category.WEIGHT
         super.sourceUnit = Units.weightUnits.first!
-        super.targetUnits = Units.weightUnits.filter({$0.symbol != "g"})
+        super.targetUnits = Units.weightUnits.filter({$0.country == "US"})
     }
     
     static func getInstance() -> WeightUnitConverter {

@@ -15,8 +15,9 @@ class LengthUnitConverter: Converter {
         super.init()
         // TODO
         // Check first is vaild or not
+        super.category = Category.LENGTH
         super.sourceUnit = Units.lengthUnits.first!
-        super.targetUnits = Units.lengthUnits.filter({$0.symbol != "m"})
+        super.targetUnits = Units.lengthUnits.filter({$0.country == "US"})
     }
     
     static func getInstance() -> LengthUnitConverter {

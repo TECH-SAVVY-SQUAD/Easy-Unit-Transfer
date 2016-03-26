@@ -55,6 +55,12 @@ class Units {
         return units
     }
     
-    
+    static func getGategorizedUnitList() -> [[Unit]] {
+        var res = [[Unit]]()
+        res.append(weightUnits)
+        res.append(lengthUnits)
+        res.append(volumeUnits)
+        return res
+    }
     
 }

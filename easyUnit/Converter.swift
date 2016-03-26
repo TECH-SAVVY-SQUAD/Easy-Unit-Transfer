@@ -13,27 +13,34 @@ class Converter {
     // Source Unit
     var sourceUnit: Unit = Unit()
     
+    // Category
+    var category: Int = -1
+    
     var sourceValue: Double = 1.0
     
     // Target Units list
     var targetUnits: [Unit] = []
     
     func switchSourceUnit(newSourceUnit: Unit, value: Double) -> Unit{
-        self.targetUnits = targetUnits.filter({$0.symbol != newSourceUnit.symbol})
-        self.targetUnits.append(sourceUnit)
+        for var i = 0; i < targetUnits.count; i++ {
+            if(targetUnits[i].symbol == newSourceUnit.symbol){
+                targetUnits[i] = self.sourceUnit
+                break
+            }
+        }
         self.sourceUnit = newSourceUnit
         self.sourceValue = value
         return sourceUnit
     }
     
     func delete(unit: Unit) {
-        if unit.category == Category.WEIGHT {
+        if unit.category == category {
             self.targetUnits = targetUnits.filter({$0.symbol != unit.symbol})
         }
     }
     
     func add(unit: Unit) {
-        if unit.category == Category.WEIGHT {
+        if unit.category == category {
             if !targetUnits.contains({$0.symbol == unit.symbol}) {
                 targetUnits.append(unit)
             }
