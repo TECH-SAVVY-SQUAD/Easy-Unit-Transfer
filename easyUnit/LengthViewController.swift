@@ -16,14 +16,21 @@ class LengthViewController: UIViewController,UITableViewDelegate,UITextFieldDele
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var currentValueUITextField: UITextField!
+    @IBOutlet weak var currentValueUITextField: DecimalTextField!
     
+    @IBOutlet weak var currentUnitCountryFlag: UIImageView!
+    @IBOutlet weak var currentUnitName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         currentUnitUILabel.text = lengthUnitConverter.sourceUnit.symbol
         currentValueUITextField.text = NSString(format:Config.numberOfDigitString, lengthUnitConverter.sourceValue) as String
+        currentUnitCountryFlag.image = UIImage(named: lengthUnitConverter.sourceUnit.country)
+        currentUnitName.text = lengthUnitConverter.sourceUnit.name
+        
         tableView.tableFooterView = UIView()
+        
+        currentValueUITextField.delegate = currentValueUITextField
         
         // remove the navigation bar board
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
@@ -33,6 +40,10 @@ class LengthViewController: UIViewController,UITableViewDelegate,UITextFieldDele
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        tableView.reloadData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,6 +67,8 @@ class LengthViewController: UIViewController,UITableViewDelegate,UITextFieldDele
                 let newUnit = lengthUnitConverter.switchSourceUnit(unit, value: value)
                 currentUnitUILabel.text = newUnit.symbol
                 currentValueUITextField.text = NSString(format:Config.numberOfDigitString, lengthUnitConverter.sourceValue) as String
+                currentUnitCountryFlag.image = UIImage(named: newUnit.country)
+                currentUnitName.text = newUnit.name
                 tableView.reloadData()
             }
         }
@@ -76,10 +89,25 @@ class LengthViewController: UIViewController,UITableViewDelegate,UITextFieldDele
         }
     }
     
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let deleteButton = UITableViewRowAction(style: .Default, title: "           ", handler: { (action, indexPath) in
+            self.tableView.dataSource?.tableView?(
+                self.tableView,
+                commitEditingStyle: .Delete,
+                forRowAtIndexPath: indexPath
+            )
+            return
+        })
+        
+        deleteButton.backgroundColor = UIColor(patternImage: UIImage(named: "delete")!)
+        
+        return [deleteButton]
+    }
+    
     
     // set the height of UITableViewCell
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 70
+        return 80
     }
     
     

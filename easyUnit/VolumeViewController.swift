@@ -16,14 +16,22 @@ class VolumeViewController: UIViewController,UITableViewDelegate,UITextFieldDele
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var currentValueUITextField: UITextField!
+    @IBOutlet weak var currentValueUITextField: DecimalTextField!
     
+    @IBOutlet weak var currentUnitCountryFlag: UIImageView!
+    
+    @IBOutlet weak var currentUnitName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         currentUnitUILabel.text = volumeUnitConverter.sourceUnit.symbol
         currentValueUITextField.text = NSString(format:Config.numberOfDigitString, volumeUnitConverter.sourceValue) as String
+        currentUnitName.text = volumeUnitConverter.sourceUnit.name
+        currentUnitCountryFlag.image = UIImage(named: volumeUnitConverter.sourceUnit.country)
+        
         tableView.tableFooterView = UIView()
+        
+        currentValueUITextField.delegate = currentValueUITextField
         
         // remove the navigation bar board
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
@@ -33,6 +41,10 @@ class VolumeViewController: UIViewController,UITableViewDelegate,UITextFieldDele
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        tableView.reloadData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,6 +68,8 @@ class VolumeViewController: UIViewController,UITableViewDelegate,UITextFieldDele
                 let newUnit = volumeUnitConverter.switchSourceUnit(unit, value: value)
                 currentUnitUILabel.text = newUnit.symbol
                 currentValueUITextField.text = NSString(format:Config.numberOfDigitString, volumeUnitConverter.sourceValue) as String
+                currentUnitName.text = newUnit.name
+                currentUnitCountryFlag.image = UIImage(named: newUnit.country)
                 tableView.reloadData()
             }
         }
@@ -76,10 +90,25 @@ class VolumeViewController: UIViewController,UITableViewDelegate,UITextFieldDele
         }
     }
     
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let deleteButton = UITableViewRowAction(style: .Default, title: "           ", handler: { (action, indexPath) in
+            self.tableView.dataSource?.tableView?(
+                self.tableView,
+                commitEditingStyle: .Delete,
+                forRowAtIndexPath: indexPath
+            )
+            return
+        })
+        
+        deleteButton.backgroundColor = UIColor(patternImage: UIImage(named: "delete")!)
+        
+        return [deleteButton]
+    }
+    
     
     // set the height of UITableViewCell
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 70
+        return 80
     }
     
     

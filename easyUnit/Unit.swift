@@ -27,6 +27,7 @@ class Unit {
     
     init(symbol: String, name: String,category: Int, description: String = "", from: (Double)->Double, to: (Double)->Double, country: String) {
         self.symbol = symbol
+        self.name = name
         self.category = category
         self.description = description
         self.from = from

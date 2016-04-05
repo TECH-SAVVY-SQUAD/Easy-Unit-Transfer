@@ -17,7 +17,7 @@ class LengthUnitConverter: Converter {
         // Check first is vaild or not
         super.category = Category.LENGTH
         super.sourceUnit = Units.lengthUnits.first!
-        super.targetUnits = Units.lengthUnits.filter({$0.country == "US"})
+        super.targetUnits = Units.lengthUnits.filter({$0.symbol == "Inch" || $0.symbol == "Foot"})
     }
     
     static func getInstance() -> LengthUnitConverter {

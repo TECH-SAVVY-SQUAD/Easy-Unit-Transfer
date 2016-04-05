@@ -18,7 +18,7 @@ class WeightUnitConverter : Converter{
         // Check first is vaild or not
         super.category = Category.WEIGHT
         super.sourceUnit = Units.weightUnits.first!
-        super.targetUnits = Units.weightUnits.filter({$0.country == "US"})
+        super.targetUnits = Units.weightUnits.filter({$0.symbol == "Oz" || $0.symbol == "Lb"})
     }
     
     static func getInstance() -> WeightUnitConverter {

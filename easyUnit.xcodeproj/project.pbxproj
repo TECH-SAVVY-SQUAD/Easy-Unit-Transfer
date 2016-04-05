@@ -16,6 +16,8 @@
 		94345D3D1C7C383700655246 /* easyUnitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94345D3C1C7C383700655246 /* easyUnitUITests.swift */; };
 		94345D4B1C7C396A00655246 /* VolumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94345D4A1C7C396A00655246 /* VolumeViewController.swift */; };
 		94345D4D1C7CD21900655246 /* LengthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94345D4C1C7CD21900655246 /* LengthViewController.swift */; };
+		943E722B1CB09B7F00FEA400 /* SourceUnitInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E722A1CB09B7F00FEA400 /* SourceUnitInputView.swift */; };
+		945890B01CB1F15A0066FFE0 /* UIColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945890AF1CB1F15A0066FFE0 /* UIColorUtil.swift */; };
 		946896711C7EDFE600B70073 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946896701C7EDFE600B70073 /* WeightViewController.swift */; };
 		94AA27601CA38D35002DB913 /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA275F1CA38D35002DB913 /* Units.swift */; };
 		94AA27631CA4F8FD002DB913 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA27621CA4F8FD002DB913 /* Converter.swift */; };
@@ -25,6 +27,7 @@
 		94AA276E1CA65C66002DB913 /* LengthUnitConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA276D1CA65C66002DB913 /* LengthUnitConverter.swift */; };
 		94AA27701CA65D57002DB913 /* VolumeUnitConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA276F1CA65D57002DB913 /* VolumeUnitConverter.swift */; };
 		94AA277B1CA6609D002DB913 /* UnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA277A1CA6609D002DB913 /* UnitCell.swift */; };
+		94AA277D1CA73BEE002DB913 /* DecimalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA277C1CA73BEE002DB913 /* DecimalTextField.swift */; };
 		94BE30EB1C9E235500C133F7 /* TemperatureUnitConverterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE30E91C9E235500C133F7 /* TemperatureUnitConverterTest.swift */; };
 		94BE30ED1C9E24F100C133F7 /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE30EC1C9E24F100C133F7 /* TemperatureViewController.swift */; };
 		94BE30EF1C9E2A6700C133F7 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE30EE1C9E2A6700C133F7 /* Unit.swift */; };
@@ -66,6 +69,8 @@
 		94345D3E1C7C383700655246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94345D4A1C7C396A00655246 /* VolumeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeViewController.swift; sourceTree = "<group>"; };
 		94345D4C1C7CD21900655246 /* LengthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LengthViewController.swift; sourceTree = "<group>"; };
+		943E722A1CB09B7F00FEA400 /* SourceUnitInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceUnitInputView.swift; sourceTree = "<group>"; };
+		945890AF1CB1F15A0066FFE0 /* UIColorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorUtil.swift; sourceTree = "<group>"; };
 		946896701C7EDFE600B70073 /* WeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
 		94AA275F1CA38D35002DB913 /* Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
 		94AA27621CA4F8FD002DB913 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
@@ -75,6 +80,7 @@
 		94AA276D1CA65C66002DB913 /* LengthUnitConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LengthUnitConverter.swift; sourceTree = "<group>"; };
 		94AA276F1CA65D57002DB913 /* VolumeUnitConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeUnitConverter.swift; sourceTree = "<group>"; };
 		94AA277A1CA6609D002DB913 /* UnitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitCell.swift; sourceTree = "<group>"; };
+		94AA277C1CA73BEE002DB913 /* DecimalTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecimalTextField.swift; sourceTree = "<group>"; };
 		94BE30E91C9E235500C133F7 /* TemperatureUnitConverterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureUnitConverterTest.swift; sourceTree = "<group>"; };
 		94BE30EC1C9E24F100C133F7 /* TemperatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
 		94BE30EE1C9E2A6700C133F7 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
@@ -236,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				94AA27621CA4F8FD002DB913 /* Converter.swift */,
+				945890AF1CB1F15A0066FFE0 /* UIColorUtil.swift */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -244,6 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				94AA277A1CA6609D002DB913 /* UnitCell.swift */,
+				94AA277C1CA73BEE002DB913 /* DecimalTextField.swift */,
+				943E722A1CB09B7F00FEA400 /* SourceUnitInputView.swift */,
 			);
 			name = components;
 			sourceTree = "<group>";
@@ -388,12 +397,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				943E722B1CB09B7F00FEA400 /* SourceUnitInputView.swift in Sources */,
 				94345D4B1C7C396A00655246 /* VolumeViewController.swift in Sources */,
 				94AA27601CA38D35002DB913 /* Units.swift in Sources */,
 				94AA27631CA4F8FD002DB913 /* Converter.swift in Sources */,
 				94AA27681CA50C46002DB913 /* Config.swift in Sources */,
 				94345D4D1C7CD21900655246 /* LengthViewController.swift in Sources */,
 				94AA276A1CA51086002DB913 /* WeightUnitConverter.swift in Sources */,
+				94AA277D1CA73BEE002DB913 /* DecimalTextField.swift in Sources */,
 				94E6EF771C806060004ACA8A /* AddWeightUIViewController.swift in Sources */,
 				94345D1B1C7C383700655246 /* AppDelegate.swift in Sources */,
 				94E6EF7B1C823ABF004ACA8A /* ShoeSizeConverter.swift in Sources */,
@@ -406,6 +417,7 @@
 				946896711C7EDFE600B70073 /* WeightViewController.swift in Sources */,
 				94AA276E1CA65C66002DB913 /* LengthUnitConverter.swift in Sources */,
 				94BE30ED1C9E24F100C133F7 /* TemperatureViewController.swift in Sources */,
+				945890B01CB1F15A0066FFE0 /* UIColorUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,10 +563,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = easyUnit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.wuplus.ios.easyUnit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -565,10 +579,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = easyUnit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.wuplus.ios.easyUnit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

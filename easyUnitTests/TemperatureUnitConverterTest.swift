@@ -22,19 +22,19 @@ class TemperatureUnitConverterTest: XCTestCase {
     }
 
     func testFromCelsiusToCelsius() {
-        XCTAssert(TemperatureUnitConverter.convert("C", to: "C", value: 20) == 20, "Pass")
+        XCTAssert(TemperatureUnitConverter.convert("˚C", to: "˚C", value: 20) == 20, "Pass")
     }
     
     func testFromFahrenheitToFahrenheit() {
-        XCTAssert(TemperatureUnitConverter.convert("F", to: "F", value: 20) == 20, "Pass")
+        XCTAssert(TemperatureUnitConverter.convert("˚F", to: "˚F", value: 20) == 20, "Pass")
     }
     
     func testFromCelsiusToFahrenheit() {
-        XCTAssert(TemperatureUnitConverter.convert("C", to: "F", value: 5) == 41, "Pass")
+        XCTAssert(TemperatureUnitConverter.convert("˚C", to: "˚F", value: 5) == 41, "Pass")
     }
     
     func testFromFahrenheitToCelsius() {
-        XCTAssert(TemperatureUnitConverter.convert("F", to: "C", value: 32) == 0, "Pass")
+        XCTAssert(TemperatureUnitConverter.convert("˚F", to: "˚C", value: 32) == 0, "Pass")
     }
     
     func testUnitsListSize() {

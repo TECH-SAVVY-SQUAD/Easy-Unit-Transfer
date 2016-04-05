@@ -17,7 +17,7 @@ class VolumeUnitConverter: Converter {
         // Check first is vaild or not
         super.category = Category.VOLUME
         super.sourceUnit = Units.volumeUnits.first!
-        super.targetUnits = Units.volumeUnits.filter({$0.country == "US"})
+        super.targetUnits = Units.volumeUnits.filter({$0.symbol == "Gal-US"})
     }
     
     static func getInstance() -> VolumeUnitConverter {

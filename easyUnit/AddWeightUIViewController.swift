@@ -10,14 +10,17 @@ import UIKit
 
 class AddWeightUintUITableViewCell: UITableViewCell {
     
-    @IBOutlet weak var AddWeightUnitCellContryUILabel: UILabel!
-    @IBOutlet weak var AddWeightUnitTitleUILabel: UILabel!
+    
+    @IBOutlet weak var unitSymol: UILabel!
+    @IBOutlet weak var unitName: UILabel!
+    @IBOutlet weak var unitCountryFlag: UIImageView!
     var unit: Unit = Unit()
     
     func loadCell(unit: Unit) {
         self.unit = unit
-        AddWeightUnitCellContryUILabel.text = unit.country
-        AddWeightUnitTitleUILabel.text = unit.symbol
+        unitSymol.text = unit.symbol
+        unitName.text = unit.name
+        unitCountryFlag.image = UIImage(named: unit.country)
     }
 }
 
@@ -34,10 +37,11 @@ class AddWeightUIViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        //view.addGestureRecognizer(tap)
         
         t.tableFooterView = UIView()
+        // remove the navigation bar board
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     override func didReceiveMemoryWarning() {
@@ -96,7 +100,7 @@ class AddWeightUIViewController: UITableViewController {
     
     // set the height of UITableViewCell
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 60
+        return 70
     }
 
 }

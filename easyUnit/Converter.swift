@@ -16,13 +16,13 @@ class Converter {
     // Category
     var category: Int = -1
     
-    var sourceValue: Double = 1.0
+    var sourceValue: Double = 1
     
     // Target Units list
     var targetUnits: [Unit] = []
     
     func switchSourceUnit(newSourceUnit: Unit, value: Double) -> Unit{
-        for var i = 0; i < targetUnits.count; i++ {
+        for i in 0 ..< targetUnits.count {
             if(targetUnits[i].symbol == newSourceUnit.symbol){
                 targetUnits[i] = self.sourceUnit
                 break
@@ -41,7 +41,7 @@ class Converter {
     
     func add(unit: Unit) {
         if unit.category == category {
-            if !targetUnits.contains({$0.symbol == unit.symbol}) {
+            if !targetUnits.contains({$0.symbol == unit.symbol}) && unit.symbol != sourceUnit.symbol {
                 targetUnits.append(unit)
             }
         }

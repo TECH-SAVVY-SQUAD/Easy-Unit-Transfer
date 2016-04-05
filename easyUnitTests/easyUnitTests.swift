@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import easyUnit
 
 class easyUnitTests: XCTestCase {
     

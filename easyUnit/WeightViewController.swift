@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeightViewController: UIViewController, UITableViewDelegate,UITextFieldDelegate {
+class WeightViewController: UIViewController, UITableViewDelegate {
     
     var weightConverter = WeightUnitConverter.getInstance()
     
@@ -16,14 +16,23 @@ class WeightViewController: UIViewController, UITableViewDelegate,UITextFieldDel
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var currentValueUITextField: UITextField!
+    @IBOutlet weak var currentValueUITextField: DecimalTextField!
+    @IBOutlet weak var currentUnitCoutryFlag: UIImageView!
 
+    @IBOutlet weak var currentUnitName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // TODO add a sperate class for the upper view, load it in anywhere
         currentUnitUILabel.text = weightConverter.sourceUnit.symbol
         currentValueUITextField.text = NSString(format:Config.numberOfDigitString, weightConverter.sourceValue) as String
+        currentUnitName.text = weightConverter.sourceUnit.name
+        currentUnitCoutryFlag.image = UIImage(named: weightConverter.sourceUnit.country)
+        
+        // make the table view fill the screen
         tableView.tableFooterView = UIView()
+        
+        currentValueUITextField.delegate = currentValueUITextField
         
         // remove the navigation bar board
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
@@ -43,6 +52,7 @@ class WeightViewController: UIViewController, UITableViewDelegate,UITextFieldDel
         return weightConverter.targetUnits.count
     }
     
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UnitCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("WeightUnitCell") as! UnitCell
@@ -60,6 +70,8 @@ class WeightViewController: UIViewController, UITableViewDelegate,UITextFieldDel
                 let newUnit = weightConverter.switchSourceUnit(unit, value: value)
                 currentUnitUILabel.text = newUnit.symbol
                 currentValueUITextField.text = NSString(format:Config.numberOfDigitString, weightConverter.sourceValue) as String
+                currentUnitName.text = newUnit.name
+                currentUnitCoutryFlag.image = UIImage(named: newUnit.country)
                 tableView.reloadData()
             }
         }
@@ -80,10 +92,26 @@ class WeightViewController: UIViewController, UITableViewDelegate,UITextFieldDel
         }
     }
     
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let deleteButton = UITableViewRowAction(style: .Default, title: "           ", handler: { (action, indexPath) in
+            self.tableView.dataSource?.tableView?(
+                self.tableView,
+                commitEditingStyle: .Delete,
+                forRowAtIndexPath: indexPath
+            )
+            return
+        })
+        
+        deleteButton.backgroundColor = UIColor(patternImage: UIImage(named: "delete")!)
+        
+        return [deleteButton]
+        
+    }
+    
     
     // set the height of UITableViewCell
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-            return 70
+            return 80
     }
     
     

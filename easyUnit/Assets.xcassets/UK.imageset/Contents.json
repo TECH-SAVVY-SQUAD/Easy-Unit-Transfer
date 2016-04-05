@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "arrow-swap copy.png",
+      "filename" : "United_Kingdom_256.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "United_Kingdom_256-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "United_Kingdom_512.png",
       "scale" : "3x"
     }
   ],
