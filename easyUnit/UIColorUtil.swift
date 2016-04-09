@@ -30,4 +30,14 @@ class UIColorUtil {
             alpha: CGFloat(1.0)
         )
     }
+    
+    static func blueRangeUIColor (blueValue: Double) -> UIColor {
+        let tmp = (blueValue <= 500) ? (1000 - blueValue)/1000.0 : 0.5
+        return UIColor(
+            red: CGFloat(1.0),
+            green: CGFloat(1.0),
+            blue: CGFloat(tmp),
+            alpha: CGFloat(1.0)
+        )
+    }
 }

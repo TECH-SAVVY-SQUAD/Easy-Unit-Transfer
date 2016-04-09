@@ -226,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="5"/>
+            <point key="canvasLocation" x="940" y="5"/>
         </scene>
         <!--Length Nav-->
         <scene sceneID="8gM-5B-ASb">
@@ -567,7 +567,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kml-Op-9O1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="-1790"/>
+            <point key="canvasLocation" x="940" y="-922"/>
         </scene>
         <!--Temperature-->
         <scene sceneID="Maq-BF-s1z">
@@ -590,7 +590,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJD-Wl-mq3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="348" y="-1790"/>
+            <point key="canvasLocation" x="348" y="-922"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -1157,6 +1157,6 @@
         <image name="volume" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ey9-xi-7fD"/>
+        <segue reference="vin-f6-lof"/>
     </inferredMetricsTieBreakers>
 </document>

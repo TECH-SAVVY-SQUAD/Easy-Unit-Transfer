@@ -19,7 +19,7 @@ class TemperatureViewController: UIViewController, UITableViewDelegate {
         SrcUnitCountryFlag.image = UIImage(named: temperatureUnitConverter.sourceUnit.country)
         
         tableView.tableFooterView = UIView()
-        tableView.backgroundColor = UIColorUtil.hexStringToUIColor(temperatureUnitConverter.getColor())
+        tableView.backgroundColor = UIColorUtil.blueRangeUIColor(temperatureUnitConverter.sourceValue)
         
         SrcUnitValue.delegate = SrcUnitValue
         
@@ -39,7 +39,7 @@ class TemperatureViewController: UIViewController, UITableViewDelegate {
             if !text.isEmpty {
                 if let number = Double(text) {
                     temperatureUnitConverter.sourceValue = number
-                    tableView.backgroundColor = UIColorUtil.hexStringToUIColor(temperatureUnitConverter.getColor())
+                    tableView.backgroundColor = UIColorUtil.blueRangeUIColor(temperatureUnitConverter.sourceValue)
                     tableView.reloadData()
                 }
             }else{
@@ -59,7 +59,7 @@ class TemperatureViewController: UIViewController, UITableViewDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("TemperatureUnitCell") as! UnitCell
         let unit = temperatureUnitConverter.targetUnits[indexPath.row]
         let value = temperatureUnitConverter.convert(temperatureUnitConverter.sourceUnit, TargetUnit: unit, value: temperatureUnitConverter.sourceValue)
-        cell.backgroundColor = UIColorUtil.hexStringToUIColor(temperatureUnitConverter.getColor())
+        cell.backgroundColor = UIColorUtil.blueRangeUIColor(temperatureUnitConverter.sourceValue)
         cell.loadCell(unit, value: value)
         
         return cell

@@ -90,7 +90,7 @@ class LengthViewController: UIViewController,UITableViewDelegate,UITextFieldDele
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let deleteButton = UITableViewRowAction(style: .Default, title: "           ", handler: { (action, indexPath) in
+        let deleteButton = UITableViewRowAction(style: .Default, title: "delete", handler: { (action, indexPath) in
             self.tableView.dataSource?.tableView?(
                 self.tableView,
                 commitEditingStyle: .Delete,
@@ -99,7 +99,7 @@ class LengthViewController: UIViewController,UITableViewDelegate,UITextFieldDele
             return
         })
         
-        deleteButton.backgroundColor = UIColor(patternImage: UIImage(named: "delete")!)
+        deleteButton.backgroundColor = UIColor(red: 49/255, green: 60/255, blue: 69/255, alpha: 1.0)
         
         return [deleteButton]
     }
