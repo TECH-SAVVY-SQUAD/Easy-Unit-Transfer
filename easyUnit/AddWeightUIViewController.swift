@@ -20,7 +20,7 @@ class AddWeightUintUITableViewCell: UITableViewCell {
         self.unit = unit
         unitSymol.text = unit.symbol
         unitName.text = unit.name
-        unitCountryFlag.image = UIImage(named: unit.country)
+        unitCountryFlag.image = UIImage(named: unit.country.getString())
     }
 }
 

@@ -24,8 +24,8 @@ class LengthViewController: UIViewController,UITableViewDelegate,UITextFieldDele
     override func viewDidLoad() {
         super.viewDidLoad()
         currentUnitUILabel.text = lengthUnitConverter.sourceUnit.symbol
-        currentValueUITextField.text = NSString(format:Config.numberOfDigitString, lengthUnitConverter.sourceValue) as String
-        currentUnitCountryFlag.image = UIImage(named: lengthUnitConverter.sourceUnit.country)
+        currentValueUITextField.text = NSString(format:"%.\(Config.numberOfDigits)f", lengthUnitConverter.sourceValue) as String
+        currentUnitCountryFlag.image = UIImage(named: lengthUnitConverter.sourceUnit.country.getString())
         currentUnitName.text = lengthUnitConverter.sourceUnit.name
         
         tableView.tableFooterView = UIView()
@@ -66,8 +66,8 @@ class LengthViewController: UIViewController,UITableViewDelegate,UITextFieldDele
             if let value = cell?.value {
                 let newUnit = lengthUnitConverter.switchSourceUnit(unit, value: value)
                 currentUnitUILabel.text = newUnit.symbol
-                currentValueUITextField.text = NSString(format:Config.numberOfDigitString, lengthUnitConverter.sourceValue) as String
-                currentUnitCountryFlag.image = UIImage(named: newUnit.country)
+                currentValueUITextField.text = NSString(format:"%.\(Config.numberOfDigits)f", lengthUnitConverter.sourceValue) as String
+                currentUnitCountryFlag.image = UIImage(named: newUnit.country.getString())
                 currentUnitName.text = newUnit.name
                 tableView.reloadData()
             }

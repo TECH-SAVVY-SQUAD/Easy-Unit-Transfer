@@ -25,9 +25,9 @@ class VolumeViewController: UIViewController,UITableViewDelegate,UITextFieldDele
     override func viewDidLoad() {
         super.viewDidLoad()
         currentUnitUILabel.text = volumeUnitConverter.sourceUnit.symbol
-        currentValueUITextField.text = NSString(format:Config.numberOfDigitString, volumeUnitConverter.sourceValue) as String
+        currentValueUITextField.text = NSString(format: "%.\(Config.numberOfDigits)f", volumeUnitConverter.sourceValue) as String
         currentUnitName.text = volumeUnitConverter.sourceUnit.name
-        currentUnitCountryFlag.image = UIImage(named: volumeUnitConverter.sourceUnit.country)
+        currentUnitCountryFlag.image = UIImage(named: volumeUnitConverter.sourceUnit.country.getString())
         
         tableView.tableFooterView = UIView()
         
@@ -67,9 +67,9 @@ class VolumeViewController: UIViewController,UITableViewDelegate,UITextFieldDele
             if let value = cell?.value {
                 let newUnit = volumeUnitConverter.switchSourceUnit(unit, value: value)
                 currentUnitUILabel.text = newUnit.symbol
-                currentValueUITextField.text = NSString(format:Config.numberOfDigitString, volumeUnitConverter.sourceValue) as String
+                currentValueUITextField.text = NSString(format:"%.\(Config.numberOfDigits)f", volumeUnitConverter.sourceValue) as String
                 currentUnitName.text = newUnit.name
-                currentUnitCountryFlag.image = UIImage(named: newUnit.country)
+                currentUnitCountryFlag.image = UIImage(named: newUnit.country.getString())
                 tableView.reloadData()
             }
         }

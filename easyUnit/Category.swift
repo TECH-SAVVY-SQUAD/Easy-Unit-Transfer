@@ -8,9 +8,24 @@
 
 import Foundation
 
-class Category {
-    static let TEMPERATURE: Int = 4
-    static let WEIGHT: Int = 1
-    static let LENGTH: Int = 2
-    static let VOLUME: Int = 3
+enum Category : Int {
+    case DEFAULT = 0
+    case WEIGHT, LENGTH, VOLUME, TEMPERATURE
+}
+
+enum Country: Int {
+    case DEFAULT = 0
+    case CN, US, UK
+    func getString() -> String {
+        switch self {
+        case .CN:
+            return "CN"
+        case .UK:
+            return "UK"
+        case .US:
+            return "US"
+        default:
+            return ""
+        }
+    }
 }

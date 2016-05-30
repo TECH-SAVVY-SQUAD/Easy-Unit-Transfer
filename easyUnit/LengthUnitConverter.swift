@@ -11,13 +11,8 @@ import Foundation
 class LengthUnitConverter: Converter {
     static private var lengthUnitConverter = LengthUnitConverter()
     
-    private override init() {
-        super.init()
-        // TODO
-        // Check first is vaild or not
-        super.category = Category.LENGTH
-        super.sourceUnit = Units.lengthUnits.first!
-        super.targetUnits = Units.lengthUnits.filter({$0.symbol == "Inch" || $0.symbol == "Foot"})
+    private init() {
+        super.init(category: Category.LENGTH, sourceUnit: Units.lengthUnits.first!, sourceValue: 1, targetUnits: Units.lengthUnits.filter({$0.symbol == "Inch" || $0.symbol == "Foot"}))
     }
     
     static func getInstance() -> LengthUnitConverter {

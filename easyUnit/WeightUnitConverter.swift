@@ -12,13 +12,8 @@ class WeightUnitConverter : Converter{
     
     static private var weightUnitConverter = WeightUnitConverter()
     
-    private override init() {
-        super.init()
-        // TODO
-        // Check first is vaild or not
-        super.category = Category.WEIGHT
-        super.sourceUnit = Units.weightUnits.first!
-        super.targetUnits = Units.weightUnits.filter({$0.symbol == "Oz" || $0.symbol == "Lb"})
+    private init() {
+        super.init(category: Category.WEIGHT, sourceUnit: Units.weightUnits.first!, sourceValue: 1, targetUnits: Units.weightUnits.filter({$0.symbol == "Oz" || $0.symbol == "Lb"}))
     }
     
     static func getInstance() -> WeightUnitConverter {

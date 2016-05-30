@@ -9,23 +9,15 @@
 import Foundation
 
 class Unit {
-    private(set) var symbol: String = ""
-    private(set) var name: String = ""
-    private(set) var description: String = ""
+    private(set) var symbol: String
+    private(set) var name: String
+    private(set) var description: String
+    private(set) var category: Category
+    private(set) var from: (Double)-> Double
+    private(set) var to: (Double)-> Double
+    private(set) var country: Country
     
-    // weight 1
-    // length 2
-    // volume 3
-    // temperature 4
-    // shoes 5
-    private(set) var category: Int = -1
-    private(set) var from: (Double)-> Double = {$0}
-    private(set) var to: (Double)-> Double = {$0}
-    private(set) var country: String = ""
-    
-    init(){}
-    
-    init(symbol: String, name: String,category: Int, description: String = "", from: (Double)->Double, to: (Double)->Double, country: String) {
+    init(symbol: String, name: String,category: Category, description: String = "", from: (Double)->Double, to: (Double)->Double, country: Country) {
         self.symbol = symbol
         self.name = name
         self.category = category
@@ -34,14 +26,4 @@ class Unit {
         self.to = to
         self.country = country
     }
-    
-    init(symbol: String, category: Int, description: String) {
-        self.symbol = symbol
-        self.category = category
-        self.description = description
-        self.country = ""
-        self.from = {$0}
-        self.to = {$0}
-    }
-
 }

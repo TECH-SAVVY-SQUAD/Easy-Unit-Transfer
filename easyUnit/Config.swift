@@ -9,9 +9,9 @@
 import Foundation
 
 class Config {
-    static var numberOfDigits = 1;
+    // Sepecfiy the precision of unit values.
+    static var numberOfDigits = 1
     
-    static var numberOfDigitString : String{
-        return "%." + String(numberOfDigits) + "f"
-    }
+    // Specifiy the language used in this app.
+    static var language = "EN"
 }

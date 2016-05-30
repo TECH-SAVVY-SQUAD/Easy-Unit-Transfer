@@ -28,12 +28,9 @@
 		94AA27701CA65D57002DB913 /* VolumeUnitConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA276F1CA65D57002DB913 /* VolumeUnitConverter.swift */; };
 		94AA277B1CA6609D002DB913 /* UnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA277A1CA6609D002DB913 /* UnitCell.swift */; };
 		94AA277D1CA73BEE002DB913 /* DecimalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA277C1CA73BEE002DB913 /* DecimalTextField.swift */; };
-		94BE30EB1C9E235500C133F7 /* TemperatureUnitConverterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE30E91C9E235500C133F7 /* TemperatureUnitConverterTest.swift */; };
 		94BE30ED1C9E24F100C133F7 /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE30EC1C9E24F100C133F7 /* TemperatureViewController.swift */; };
 		94BE30EF1C9E2A6700C133F7 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE30EE1C9E2A6700C133F7 /* Unit.swift */; };
 		94E6EF771C806060004ACA8A /* AddWeightUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E6EF761C806060004ACA8A /* AddWeightUIViewController.swift */; };
-		94E6EF791C822529004ACA8A /* ShoeSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E6EF781C822529004ACA8A /* ShoeSizeViewController.swift */; };
-		94E6EF7B1C823ABF004ACA8A /* ShoeSizeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E6EF7A1C823ABF004ACA8A /* ShoeSizeConverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,12 +78,9 @@
 		94AA276F1CA65D57002DB913 /* VolumeUnitConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeUnitConverter.swift; sourceTree = "<group>"; };
 		94AA277A1CA6609D002DB913 /* UnitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitCell.swift; sourceTree = "<group>"; };
 		94AA277C1CA73BEE002DB913 /* DecimalTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecimalTextField.swift; sourceTree = "<group>"; };
-		94BE30E91C9E235500C133F7 /* TemperatureUnitConverterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureUnitConverterTest.swift; sourceTree = "<group>"; };
 		94BE30EC1C9E24F100C133F7 /* TemperatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
 		94BE30EE1C9E2A6700C133F7 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		94E6EF761C806060004ACA8A /* AddWeightUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWeightUIViewController.swift; sourceTree = "<group>"; };
-		94E6EF781C822529004ACA8A /* ShoeSizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoeSizeViewController.swift; sourceTree = "<group>"; };
-		94E6EF7A1C823ABF004ACA8A /* ShoeSizeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoeSizeConverter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +134,6 @@
 				94AA27791CA66053002DB913 /* Unitlist */,
 				94AA27781CA66033002DB913 /* components */,
 				94AA27771CA6600C002DB913 /* common */,
-				94AA27761CA65FAD002DB913 /* Shoesize */,
 				94AA27751CA65F8F002DB913 /* Length */,
 				94AA27741CA65F86002DB913 /* Volume */,
 				94AA27731CA65F7C002DB913 /* Temperature */,
@@ -161,7 +154,6 @@
 			children = (
 				94345D311C7C383700655246 /* easyUnitTests.swift */,
 				94345D331C7C383700655246 /* Info.plist */,
-				94BE30E91C9E235500C133F7 /* TemperatureUnitConverterTest.swift */,
 			);
 			path = easyUnitTests;
 			sourceTree = "<group>";
@@ -227,15 +219,6 @@
 				94AA276D1CA65C66002DB913 /* LengthUnitConverter.swift */,
 			);
 			name = Length;
-			sourceTree = "<group>";
-		};
-		94AA27761CA65FAD002DB913 /* Shoesize */ = {
-			isa = PBXGroup;
-			children = (
-				94E6EF7A1C823ABF004ACA8A /* ShoeSizeConverter.swift */,
-				94E6EF781C822529004ACA8A /* ShoeSizeViewController.swift */,
-			);
-			name = Shoesize;
 			sourceTree = "<group>";
 		};
 		94AA27771CA6600C002DB913 /* common */ = {
@@ -407,9 +390,7 @@
 				94AA277D1CA73BEE002DB913 /* DecimalTextField.swift in Sources */,
 				94E6EF771C806060004ACA8A /* AddWeightUIViewController.swift in Sources */,
 				94345D1B1C7C383700655246 /* AppDelegate.swift in Sources */,
-				94E6EF7B1C823ABF004ACA8A /* ShoeSizeConverter.swift in Sources */,
 				94AA27701CA65D57002DB913 /* VolumeUnitConverter.swift in Sources */,
-				94E6EF791C822529004ACA8A /* ShoeSizeViewController.swift in Sources */,
 				94BE30EF1C9E2A6700C133F7 /* Unit.swift in Sources */,
 				94AA276C1CA65531002DB913 /* Category.swift in Sources */,
 				94AA277B1CA6609D002DB913 /* UnitCell.swift in Sources */,
@@ -426,7 +407,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				94345D321C7C383700655246 /* easyUnitTests.swift in Sources */,
-				94BE30EB1C9E235500C133F7 /* TemperatureUnitConverterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

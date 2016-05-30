@@ -19,9 +19,9 @@ class UnitCell: UITableViewCell {
     
     func loadCell(unit: Unit, value: Double) {
         cellTitle.text = unit.symbol
-        cellValue.text = NSString(format:Config.numberOfDigitString, value) as String
+        cellValue.text = NSString(format:"%.\(Config.numberOfDigits)f", value) as String
         cellUnitName.text = unit.name
-        cellUnitCountryFlag.image = UIImage(named: unit.country)
+        cellUnitCountryFlag.image = UIImage(named: unit.country.getString())
         self.unit = unit
         self.value = value
     }

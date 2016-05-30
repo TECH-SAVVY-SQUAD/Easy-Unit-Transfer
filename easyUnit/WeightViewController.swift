@@ -25,9 +25,9 @@ class WeightViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         // TODO add a sperate class for the upper view, load it in anywhere
         currentUnitUILabel.text = weightConverter.sourceUnit.symbol
-        currentValueUITextField.text = NSString(format:Config.numberOfDigitString, weightConverter.sourceValue) as String
+        currentValueUITextField.text = NSString(format:"%.\(Config.numberOfDigits)f", weightConverter.sourceValue) as String
         currentUnitName.text = weightConverter.sourceUnit.name
-        currentUnitCoutryFlag.image = UIImage(named: weightConverter.sourceUnit.country)
+        currentUnitCoutryFlag.image = UIImage(named: weightConverter.sourceUnit.country.getString())
         
         // make the table view fill the screen
         tableView.tableFooterView = UIView()
@@ -69,9 +69,9 @@ class WeightViewController: UIViewController, UITableViewDelegate {
             if let value = cell?.value {
                 let newUnit = weightConverter.switchSourceUnit(unit, value: value)
                 currentUnitUILabel.text = newUnit.symbol
-                currentValueUITextField.text = NSString(format:Config.numberOfDigitString, weightConverter.sourceValue) as String
+                currentValueUITextField.text = NSString(format:"%.\(Config.numberOfDigits)f", weightConverter.sourceValue) as String
                 currentUnitName.text = newUnit.name
-                currentUnitCoutryFlag.image = UIImage(named: newUnit.country)
+                currentUnitCoutryFlag.image = UIImage(named: newUnit.country.getString())
                 tableView.reloadData()
             }
         }

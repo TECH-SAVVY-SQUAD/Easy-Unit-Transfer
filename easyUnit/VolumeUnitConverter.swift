@@ -11,13 +11,8 @@ import Foundation
 class VolumeUnitConverter: Converter {
     static private var volumeUnitConverter = VolumeUnitConverter()
     
-    private override init() {
-        super.init()
-        // TODO
-        // Check first is vaild or not
-        super.category = Category.VOLUME
-        super.sourceUnit = Units.volumeUnits.first!
-        super.targetUnits = Units.volumeUnits.filter({$0.symbol == "Gal-US"})
+    private init() {
+        super.init(category: Category.VOLUME, sourceUnit: Units.volumeUnits.first!, sourceValue: 1, targetUnits: Units.volumeUnits.filter({$0.symbol == "Gal-US"}))
     }
     
     static func getInstance() -> VolumeUnitConverter {

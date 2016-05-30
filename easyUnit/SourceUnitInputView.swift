@@ -16,7 +16,7 @@ class SourceUnitInputView: UIView {
     
     func load(sourceUnit: Unit, value: Double) {
         currentUnitUILabel.text = sourceUnit.symbol
-        currentValueUITextField.text = NSString(format:Config.numberOfDigitString, value) as String
+        currentValueUITextField.text = NSString(format:"%.\(Config.numberOfDigits)f", value) as String
         currentUnitName.text = sourceUnit.name
         currentValueUITextField.delegate = currentValueUITextField
     }

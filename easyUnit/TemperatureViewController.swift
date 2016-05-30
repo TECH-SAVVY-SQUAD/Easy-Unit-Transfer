@@ -14,9 +14,9 @@ class TemperatureViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         SrcUnitLabel.text = temperatureUnitConverter.sourceUnit.symbol
-        SrcUnitValue.text = NSString(format:Config.numberOfDigitString, temperatureUnitConverter.sourceValue) as String
+        SrcUnitValue.text = NSString(format:"%.\(Config.numberOfDigits)f", temperatureUnitConverter.sourceValue) as String
         SrcUnitName.text = temperatureUnitConverter.sourceUnit.name
-        SrcUnitCountryFlag.image = UIImage(named: temperatureUnitConverter.sourceUnit.country)
+        SrcUnitCountryFlag.image = UIImage(named: temperatureUnitConverter.sourceUnit.country.getString())
         
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = UIColorUtil.blueRangeUIColor(temperatureUnitConverter.sourceValue)
@@ -71,9 +71,9 @@ class TemperatureViewController: UIViewController, UITableViewDelegate {
             if let value = cell?.value {
                 let newUnit = temperatureUnitConverter.switchSourceUnit(unit, value: value)
                 SrcUnitLabel.text = newUnit.symbol
-                SrcUnitValue.text = NSString(format:Config.numberOfDigitString, temperatureUnitConverter.sourceValue) as String
+                SrcUnitValue.text = NSString(format:"%.\(Config.numberOfDigits)f", temperatureUnitConverter.sourceValue) as String
                 SrcUnitName.text = newUnit.name
-                SrcUnitCountryFlag.image = UIImage(named: unit.country)
+                SrcUnitCountryFlag.image = UIImage(named: unit.country.getString())
                 tableView.reloadData()
             }
         }
