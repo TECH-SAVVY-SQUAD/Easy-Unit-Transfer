@@ -24,10 +24,7 @@ class VolumeViewController: UIViewController,UITableViewDelegate,UITextFieldDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentUnitUILabel.text = volumeUnitConverter.sourceUnit.symbol
-        currentValueUITextField.text = NSString(format: "%.\(Config.numberOfDigits)f", volumeUnitConverter.sourceValue) as String
-        currentUnitName.text = volumeUnitConverter.sourceUnit.name
-        currentUnitCountryFlag.image = UIImage(named: volumeUnitConverter.sourceUnit.country.getString())
+        self.loadCurrentUnit()
         
         tableView.tableFooterView = UIView()
         
@@ -43,7 +40,15 @@ class VolumeViewController: UIViewController,UITableViewDelegate,UITextFieldDele
         // Dispose of any resources that can be recreated.
     }
     
+    func loadCurrentUnit() {
+        currentUnitUILabel.text = volumeUnitConverter.sourceUnit.symbol
+        currentValueUITextField.text = NSString(format: "%.\(Config.getInstance().numberOfDigits)f", volumeUnitConverter.sourceValue) as String
+        currentUnitName.text = volumeUnitConverter.sourceUnit.name
+        currentUnitCountryFlag.image = UIImage(named: volumeUnitConverter.sourceUnit.country.getString())
+    }
+    
     override func viewDidAppear(animated: Bool) {
+        self.loadCurrentUnit()
         tableView.reloadData()
     }
     
@@ -55,7 +60,7 @@ class VolumeViewController: UIViewController,UITableViewDelegate,UITextFieldDele
         
         let cell = tableView.dequeueReusableCellWithIdentifier("VolumeUnitCell") as! UnitCell
         let unit = volumeUnitConverter.targetUnits[indexPath.row]
-        let value = volumeUnitConverter.convert(volumeUnitConverter.sourceUnit, TargetUnit: unit, value: volumeUnitConverter.sourceValue)
+        let value = volumeUnitConverter.convert(volumeUnitConverter.sourceUnit, target: unit, value: volumeUnitConverter.sourceValue)
         cell.loadCell(unit, value: value)
         
         return cell
@@ -67,7 +72,7 @@ class VolumeViewController: UIViewController,UITableViewDelegate,UITextFieldDele
             if let value = cell?.value {
                 let newUnit = volumeUnitConverter.switchSourceUnit(unit, value: value)
                 currentUnitUILabel.text = newUnit.symbol
-                currentValueUITextField.text = NSString(format:"%.\(Config.numberOfDigits)f", volumeUnitConverter.sourceValue) as String
+                currentValueUITextField.text = NSString(format:"%.\(Config.getInstance().numberOfDigits)f", volumeUnitConverter.sourceValue) as String
                 currentUnitName.text = newUnit.name
                 currentUnitCountryFlag.image = UIImage(named: newUnit.country.getString())
                 tableView.reloadData()

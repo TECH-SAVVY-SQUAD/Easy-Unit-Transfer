@@ -15,11 +15,11 @@ class UnitCell: UITableViewCell {
     @IBOutlet weak var cellUnitName: UILabel!
     @IBOutlet weak var cellUnitCountryFlag: UIImageView!
     var unit: Unit = Unit()
-    var value: Double = 1.0
+    var value: Double = 0.0
     
     func loadCell(unit: Unit, value: Double) {
         cellTitle.text = unit.symbol
-        cellValue.text = NSString(format:"%.\(Config.numberOfDigits)f", value) as String
+        cellValue.text = NSString(format:"%.\(Config.getInstance().numberOfDigits)f", value) as String
         cellUnitName.text = unit.name
         cellUnitCountryFlag.image = UIImage(named: unit.country.getString())
         self.unit = unit

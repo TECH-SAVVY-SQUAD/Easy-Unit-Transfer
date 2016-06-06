@@ -17,8 +17,10 @@
 		94345D4B1C7C396A00655246 /* VolumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94345D4A1C7C396A00655246 /* VolumeViewController.swift */; };
 		94345D4D1C7CD21900655246 /* LengthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94345D4C1C7CD21900655246 /* LengthViewController.swift */; };
 		943E722B1CB09B7F00FEA400 /* SourceUnitInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E722A1CB09B7F00FEA400 /* SourceUnitInputView.swift */; };
+		9453FE9D1D040A73000E2635 /* SettingsViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453FE9C1D040A73000E2635 /* SettingsViewControllerTableViewController.swift */; };
 		945890B01CB1F15A0066FFE0 /* UIColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945890AF1CB1F15A0066FFE0 /* UIColorUtil.swift */; };
 		946896711C7EDFE600B70073 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946896701C7EDFE600B70073 /* WeightViewController.swift */; };
+		947CF7F31D04EF2C00FA155C /* LanguageSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947CF7F21D04EF2C00FA155C /* LanguageSettingController.swift */; };
 		94AA27601CA38D35002DB913 /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA275F1CA38D35002DB913 /* Units.swift */; };
 		94AA27631CA4F8FD002DB913 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA27621CA4F8FD002DB913 /* Converter.swift */; };
 		94AA27681CA50C46002DB913 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA27671CA50C46002DB913 /* Config.swift */; };
@@ -30,6 +32,7 @@
 		94AA277D1CA73BEE002DB913 /* DecimalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA277C1CA73BEE002DB913 /* DecimalTextField.swift */; };
 		94BE30ED1C9E24F100C133F7 /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE30EC1C9E24F100C133F7 /* TemperatureViewController.swift */; };
 		94BE30EF1C9E2A6700C133F7 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE30EE1C9E2A6700C133F7 /* Unit.swift */; };
+		94DD09BC1CFCF92400625E76 /* setting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94DD09BB1CFCF92400625E76 /* setting.plist */; };
 		94E6EF771C806060004ACA8A /* AddWeightUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E6EF761C806060004ACA8A /* AddWeightUIViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,8 +70,10 @@
 		94345D4A1C7C396A00655246 /* VolumeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeViewController.swift; sourceTree = "<group>"; };
 		94345D4C1C7CD21900655246 /* LengthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LengthViewController.swift; sourceTree = "<group>"; };
 		943E722A1CB09B7F00FEA400 /* SourceUnitInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceUnitInputView.swift; sourceTree = "<group>"; };
+		9453FE9C1D040A73000E2635 /* SettingsViewControllerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerTableViewController.swift; sourceTree = "<group>"; };
 		945890AF1CB1F15A0066FFE0 /* UIColorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorUtil.swift; sourceTree = "<group>"; };
 		946896701C7EDFE600B70073 /* WeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
+		947CF7F21D04EF2C00FA155C /* LanguageSettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageSettingController.swift; sourceTree = "<group>"; };
 		94AA275F1CA38D35002DB913 /* Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
 		94AA27621CA4F8FD002DB913 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		94AA27671CA50C46002DB913 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -80,6 +85,7 @@
 		94AA277C1CA73BEE002DB913 /* DecimalTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecimalTextField.swift; sourceTree = "<group>"; };
 		94BE30EC1C9E24F100C133F7 /* TemperatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
 		94BE30EE1C9E2A6700C133F7 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		94DD09BB1CFCF92400625E76 /* setting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = setting.plist; path = data/setting.plist; sourceTree = "<group>"; };
 		94E6EF761C806060004ACA8A /* AddWeightUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWeightUIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,7 +186,10 @@
 		94AA27641CA50BBA002DB913 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				94DD09BB1CFCF92400625E76 /* setting.plist */,
 				94AA27671CA50C46002DB913 /* Config.swift */,
+				9453FE9C1D040A73000E2635 /* SettingsViewControllerTableViewController.swift */,
+				947CF7F21D04EF2C00FA155C /* LanguageSettingController.swift */,
 			);
 			name = Config;
 			sourceTree = "<group>";
@@ -354,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94345D271C7C383700655246 /* LaunchScreen.storyboard in Resources */,
+				94DD09BC1CFCF92400625E76 /* setting.plist in Resources */,
 				94345D241C7C383700655246 /* Assets.xcassets in Resources */,
 				94345D221C7C383700655246 /* Main.storyboard in Resources */,
 			);
@@ -380,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				947CF7F31D04EF2C00FA155C /* LanguageSettingController.swift in Sources */,
 				943E722B1CB09B7F00FEA400 /* SourceUnitInputView.swift in Sources */,
 				94345D4B1C7C396A00655246 /* VolumeViewController.swift in Sources */,
 				94AA27601CA38D35002DB913 /* Units.swift in Sources */,
@@ -393,6 +404,7 @@
 				94AA27701CA65D57002DB913 /* VolumeUnitConverter.swift in Sources */,
 				94BE30EF1C9E2A6700C133F7 /* Unit.swift in Sources */,
 				94AA276C1CA65531002DB913 /* Category.swift in Sources */,
+				9453FE9D1D040A73000E2635 /* SettingsViewControllerTableViewController.swift in Sources */,
 				94AA277B1CA6609D002DB913 /* UnitCell.swift in Sources */,
 				9424D9821C9D007F004A5339 /* TemperatureUnitConverter.swift in Sources */,
 				946896711C7EDFE600B70073 /* WeightViewController.swift in Sources */,

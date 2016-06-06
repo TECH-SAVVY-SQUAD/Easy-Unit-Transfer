@@ -14,7 +14,7 @@ class TemperatureViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         SrcUnitLabel.text = temperatureUnitConverter.sourceUnit.symbol
-        SrcUnitValue.text = NSString(format:"%.\(Config.numberOfDigits)f", temperatureUnitConverter.sourceValue) as String
+        SrcUnitValue.text = NSString(format:"%.\(Config.getInstance().numberOfDigits)f", temperatureUnitConverter.sourceValue) as String
         SrcUnitName.text = temperatureUnitConverter.sourceUnit.name
         SrcUnitCountryFlag.image = UIImage(named: temperatureUnitConverter.sourceUnit.country.getString())
         
@@ -58,7 +58,7 @@ class TemperatureViewController: UIViewController, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("TemperatureUnitCell") as! UnitCell
         let unit = temperatureUnitConverter.targetUnits[indexPath.row]
-        let value = temperatureUnitConverter.convert(temperatureUnitConverter.sourceUnit, TargetUnit: unit, value: temperatureUnitConverter.sourceValue)
+        let value = temperatureUnitConverter.convert(temperatureUnitConverter.sourceUnit, target: unit, value: temperatureUnitConverter.sourceValue)
         cell.backgroundColor = UIColorUtil.blueRangeUIColor(temperatureUnitConverter.sourceValue)
         cell.loadCell(unit, value: value)
         
@@ -71,7 +71,7 @@ class TemperatureViewController: UIViewController, UITableViewDelegate {
             if let value = cell?.value {
                 let newUnit = temperatureUnitConverter.switchSourceUnit(unit, value: value)
                 SrcUnitLabel.text = newUnit.symbol
-                SrcUnitValue.text = NSString(format:"%.\(Config.numberOfDigits)f", temperatureUnitConverter.sourceValue) as String
+                SrcUnitValue.text = NSString(format:"%.\(Config.getInstance().numberOfDigits)f", temperatureUnitConverter.sourceValue) as String
                 SrcUnitName.text = newUnit.name
                 SrcUnitCountryFlag.image = UIImage(named: unit.country.getString())
                 tableView.reloadData()

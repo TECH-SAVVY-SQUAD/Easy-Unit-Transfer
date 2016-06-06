@@ -10,9 +10,9 @@ import Foundation
 
 class Converter {
     
-    private(set) var sourceUnit: Unit  // Source unit.
-    private(set) var category: Category  // Category
-    private(set) var sourceValue: Double  // Current Value
+    var sourceUnit: Unit  // Source unit.
+    var sourceValue: Double  // Current Value
+    private var category: Category  // Category
     private(set) var targetUnits: [Unit]  // Target units list.
     
     /**

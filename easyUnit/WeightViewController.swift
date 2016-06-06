@@ -23,11 +23,7 @@ class WeightViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO add a sperate class for the upper view, load it in anywhere
-        currentUnitUILabel.text = weightConverter.sourceUnit.symbol
-        currentValueUITextField.text = NSString(format:"%.\(Config.numberOfDigits)f", weightConverter.sourceValue) as String
-        currentUnitName.text = weightConverter.sourceUnit.name
-        currentUnitCoutryFlag.image = UIImage(named: weightConverter.sourceUnit.country.getString())
+        self.loadCurrentUnit()
         
         // make the table view fill the screen
         tableView.tableFooterView = UIView()
@@ -44,7 +40,16 @@ class WeightViewController: UIViewController, UITableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func loadCurrentUnit() {
+        // TODO add a sperate class for the upper view, load it in anywhere
+        currentUnitUILabel.text = weightConverter.sourceUnit.symbol
+        currentValueUITextField.text = NSString(format:"%.\(Config.getInstance().numberOfDigits)f", weightConverter.sourceValue) as String
+        currentUnitName.text = weightConverter.sourceUnit.name
+        currentUnitCoutryFlag.image = UIImage(named: weightConverter.sourceUnit.country.getString())
+    }
+    
     override func viewDidAppear(animated: Bool) {
+        self.loadCurrentUnit()
         tableView.reloadData()
     }
 
@@ -57,7 +62,7 @@ class WeightViewController: UIViewController, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("WeightUnitCell") as! UnitCell
         let unit = weightConverter.targetUnits[indexPath.row]
-        let value = weightConverter.convert(weightConverter.sourceUnit, TargetUnit: unit, value: weightConverter.sourceValue)
+        let value = weightConverter.convert(weightConverter.sourceUnit, target: unit, value: weightConverter.sourceValue)
         cell.loadCell(unit, value: value)
         
         return cell
@@ -69,7 +74,7 @@ class WeightViewController: UIViewController, UITableViewDelegate {
             if let value = cell?.value {
                 let newUnit = weightConverter.switchSourceUnit(unit, value: value)
                 currentUnitUILabel.text = newUnit.symbol
-                currentValueUITextField.text = NSString(format:"%.\(Config.numberOfDigits)f", weightConverter.sourceValue) as String
+                currentValueUITextField.text = NSString(format:"%.\(Config.getInstance().numberOfDigits)f", weightConverter.sourceValue) as String
                 currentUnitName.text = newUnit.name
                 currentUnitCoutryFlag.image = UIImage(named: newUnit.country.getString())
                 tableView.reloadData()
@@ -131,6 +136,9 @@ class WeightViewController: UIViewController, UITableViewDelegate {
     
     @IBAction func UIButtonAddWeightUnit(sender: UIBarButtonItem) {
         performSegueWithIdentifier("AddUnitFromWeightSegue", sender: self)
+    }
+    @IBAction func UIButtonSettings(sender: UIBarButtonItem) {
+        performSegueWithIdentifier("settingsSegue", sender: self)
     }
 }
 

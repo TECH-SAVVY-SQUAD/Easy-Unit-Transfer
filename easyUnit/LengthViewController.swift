@@ -23,11 +23,7 @@ class LengthViewController: UIViewController,UITableViewDelegate,UITextFieldDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentUnitUILabel.text = lengthUnitConverter.sourceUnit.symbol
-        currentValueUITextField.text = NSString(format:"%.\(Config.numberOfDigits)f", lengthUnitConverter.sourceValue) as String
-        currentUnitCountryFlag.image = UIImage(named: lengthUnitConverter.sourceUnit.country.getString())
-        currentUnitName.text = lengthUnitConverter.sourceUnit.name
-        
+        self.loadCurrentUnit()
         tableView.tableFooterView = UIView()
         
         currentValueUITextField.delegate = currentValueUITextField
@@ -42,7 +38,15 @@ class LengthViewController: UIViewController,UITableViewDelegate,UITextFieldDele
         // Dispose of any resources that can be recreated.
     }
     
+    func loadCurrentUnit() {
+        currentUnitUILabel.text = lengthUnitConverter.sourceUnit.symbol
+        currentValueUITextField.text = NSString(format:"%.\(Config.getInstance().numberOfDigits)f", lengthUnitConverter.sourceValue) as String
+        currentUnitCountryFlag.image = UIImage(named: lengthUnitConverter.sourceUnit.country.getString())
+        currentUnitName.text = lengthUnitConverter.sourceUnit.name
+    }
+    
     override func viewDidAppear(animated: Bool) {
+        self.loadCurrentUnit()
         tableView.reloadData()
     }
     
@@ -54,7 +58,7 @@ class LengthViewController: UIViewController,UITableViewDelegate,UITextFieldDele
         
         let cell = tableView.dequeueReusableCellWithIdentifier("LengthUnitCell") as! UnitCell
         let unit = lengthUnitConverter.targetUnits[indexPath.row]
-        let value = lengthUnitConverter.convert(lengthUnitConverter.sourceUnit, TargetUnit: unit, value: lengthUnitConverter.sourceValue)
+        let value = lengthUnitConverter.convert(lengthUnitConverter.sourceUnit, target: unit, value: lengthUnitConverter.sourceValue)
         cell.loadCell(unit, value: value)
         
         return cell
@@ -66,7 +70,7 @@ class LengthViewController: UIViewController,UITableViewDelegate,UITextFieldDele
             if let value = cell?.value {
                 let newUnit = lengthUnitConverter.switchSourceUnit(unit, value: value)
                 currentUnitUILabel.text = newUnit.symbol
-                currentValueUITextField.text = NSString(format:"%.\(Config.numberOfDigits)f", lengthUnitConverter.sourceValue) as String
+                currentValueUITextField.text = NSString(format:"%.\(Config.getInstance().numberOfDigits)f", lengthUnitConverter.sourceValue) as String
                 currentUnitCountryFlag.image = UIImage(named: newUnit.country.getString())
                 currentUnitName.text = newUnit.name
                 tableView.reloadData()
