@@ -8,9 +8,7 @@
 
 import UIKit
 
-class VolumeViewController: UIViewController,UITableViewDelegate,UITextFieldDelegate {
-    
-    var volumeUnitConverter = VolumeUnitConverter.getInstance()
+class VolumeViewController: BaseController, UITextFieldDelegate {
     
     @IBOutlet weak var currentUnitUILabel: UILabel!
     
@@ -22,112 +20,18 @@ class VolumeViewController: UIViewController,UITableViewDelegate,UITextFieldDele
     
     @IBOutlet weak var currentUnitName: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.loadCurrentUnit()
-        
-        tableView.tableFooterView = UIView()
-        
-        currentValueUITextField.delegate = currentValueUITextField
-        
-        // remove the navigation bar board
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func loadCurrentUnit() {
-        currentUnitUILabel.text = volumeUnitConverter.sourceUnit.symbol
-        currentValueUITextField.text = NSString(format: "%.\(Config.getInstance().numberOfDigits)f", volumeUnitConverter.sourceValue) as String
-        currentUnitName.text = volumeUnitConverter.sourceUnit.name
-        currentUnitCountryFlag.image = UIImage(named: volumeUnitConverter.sourceUnit.country.getString())
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        self.loadCurrentUnit()
-        tableView.reloadData()
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return volumeUnitConverter.targetUnits.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UnitCell {
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier("VolumeUnitCell") as! UnitCell
-        let unit = volumeUnitConverter.targetUnits[indexPath.row]
-        let value = volumeUnitConverter.convert(volumeUnitConverter.sourceUnit, target: unit, value: volumeUnitConverter.sourceValue)
-        cell.loadCell(unit, value: value)
-        
-        return cell
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell : UnitCell? = self.tableView.cellForRowAtIndexPath(indexPath) as! UnitCell?
-        if let unit = cell?.unit {
-            if let value = cell?.value {
-                let newUnit = volumeUnitConverter.switchSourceUnit(unit, value: value)
-                currentUnitUILabel.text = newUnit.symbol
-                currentValueUITextField.text = NSString(format:"%.\(Config.getInstance().numberOfDigits)f", volumeUnitConverter.sourceValue) as String
-                currentUnitName.text = newUnit.name
-                currentUnitCountryFlag.image = UIImage(named: newUnit.country.getString())
-                tableView.reloadData()
-            }
-        }
-    }
-    
-    
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        let cell : UnitCell? = self.tableView.cellForRowAtIndexPath(indexPath) as! UnitCell?
-        if (editingStyle == UITableViewCellEditingStyle.Delete){
-            if let unit = cell?.unit {
-                volumeUnitConverter.delete(unit)
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-            }
-        }
-    }
-    
-    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let deleteButton = UITableViewRowAction(style: .Default, title: "delete", handler: { (action, indexPath) in
-            self.tableView.dataSource?.tableView?(
-                self.tableView,
-                commitEditingStyle: .Delete,
-                forRowAtIndexPath: indexPath
-            )
-            return
-        })
-        
-        deleteButton.backgroundColor = UIColor(red: 49/255, green: 60/255, blue: 69/255, alpha: 1.0)
-        
-        return [deleteButton]
-    }
-    
-    
-    // set the height of UITableViewCell
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 80
-    }
-    
+    private var sourceValue = 0.0
     
     @IBAction func UITextFieldValueInput(sender: UITextField) {
         if let text = sender.text {
             if !text.isEmpty {
                 if let number = Double(text) {
-                    volumeUnitConverter.sourceValue = number
-                    tableView.reloadData()
+                    sourceValue = number
                 }
             }else{
-                volumeUnitConverter.sourceValue = 1.0
-                tableView.reloadData()
+                sourceValue = 1.0
             }
+            tableView.reloadData()
         }
     }
     
@@ -135,5 +39,51 @@ class VolumeViewController: UIViewController,UITableViewDelegate,UITextFieldDele
         performSegueWithIdentifier("AddUnitFromVolumeSegue", sender: self)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.updateView()
+        tableView.tableFooterView = UIView()
+        
+        currentValueUITextField.delegate = currentValueUITextField
+        
+        // remove the navigation bar board
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        self.navigationController?.navigationBar.topItem?.title = "LENGTH".localized()
+    }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.updateView()
+    }
+    
+    func updateView() {
+        let sourceUnit = UnitAPI.sharedUnitAPI.getSourceUnitForLength()
+        let sourceValue = UnitAPI.sharedUnitAPI.getSourceValueForLength()
+        currentUnitUILabel.text = sourceUnit.symbol.localized()
+        currentValueUITextField.text = NSString(format:"%.\(Config.getInstance().numberOfDigits)f", sourceValue) as String
+        currentUnitCountryFlag.image = UIImage(named: sourceUnit.country.getString())
+        currentUnitName.text = sourceUnit.name.localized()
+        tableView.reloadData()
+    }
+}
+
+extension LengthViewController: UITableViewDataSource {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return UnitAPI.sharedUnitAPI.getTaregetUnitsForLength().count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("UnitCell") as! UnitCell
+        let unit = UnitAPI.sharedUnitAPI.getTaregetUnitsForLength()[indexPath.row]
+        let value = UnitAPI.sharedUnitAPI.convert(UnitAPI.sharedUnitAPI.getSourceUnitForLength(), target: unit, value: sourceValue)
+        cell.loadCell(unit, value: value)
+        
+        return cell
+    }
 }

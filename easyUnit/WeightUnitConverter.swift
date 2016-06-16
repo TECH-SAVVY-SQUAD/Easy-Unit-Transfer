@@ -13,7 +13,7 @@ class WeightUnitConverter : Converter{
     static private var weightUnitConverter = WeightUnitConverter()
     
     private init() {
-        super.init(category: Category.WEIGHT, sourceUnit: Units.weightUnits.first!, sourceValue: 1, targetUnits: Units.weightUnits.filter({$0.symbol == "Oz" || $0.symbol == "Lb"}))
+        super.init(category: Category.WEIGHT, sourceUnit: Units.weightUnits.first!, sourceValue: 1, targetUnits: Units.weightUnits.filter({$0.symbol == "OZ" || $0.symbol == "LB"}))
     }
     
     static func getInstance() -> WeightUnitConverter {

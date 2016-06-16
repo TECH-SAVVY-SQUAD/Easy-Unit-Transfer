@@ -32,7 +32,7 @@ class Config {
     // Key in the plist file for numberOfDigit value.
     let NUMBER_OF_DIGITS_KEY = "numberOfDigits"
     // Specifiy the language used in this app.
-    var language = Language.EN
+    var language = Language.CN
     // Key in the plist file for language value.
     let LANGUAGE_KEY = "language"
     
@@ -103,18 +103,5 @@ class Config {
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let documentsDirectory = paths[0]
         return documentsDirectory
-    }
-}
-
-enum Language: Int {
-    case EN = 0
-    case CN
-    func getString() -> String {
-        switch self {
-        case .CN:
-            return "Chinese"
-        case .EN:
-            return "English"
-        }
     }
 }

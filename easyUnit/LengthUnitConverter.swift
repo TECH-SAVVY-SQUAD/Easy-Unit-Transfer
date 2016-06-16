@@ -12,7 +12,7 @@ class LengthUnitConverter: Converter {
     static private var lengthUnitConverter = LengthUnitConverter()
     
     private init() {
-        super.init(category: Category.LENGTH, sourceUnit: Units.lengthUnits.first!, sourceValue: 1, targetUnits: Units.lengthUnits.filter({$0.symbol == "Inch" || $0.symbol == "Foot"}))
+        super.init(category: Category.LENGTH, sourceUnit: Units.lengthUnits.first!, sourceValue: 1, targetUnits: Units.lengthUnits.filter({$0.symbol == "IN" || $0.symbol == "FT"}))
     }
     
     static func getInstance() -> LengthUnitConverter {

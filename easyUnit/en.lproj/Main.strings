@@ -1,0 +1,144 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "4GQ-52-nZP"; */
+"4GQ-52-nZP.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "4Ij-qQ-gTs"; */
+"4Ij-qQ-gTs.text" = "Label";
+
+/* Class = "UITextField"; text = "1"; ObjectID = "56a-mV-R0A"; */
+"56a-mV-R0A.text" = "1";
+
+/* Class = "UILabel"; text = "Symbol"; ObjectID = "7rX-re-8rt"; */
+"7rX-re-8rt.text" = "Symbol";
+
+/* Class = "UILabel"; text = "Pound"; ObjectID = "9f3-75-1od"; */
+"9f3-75-1od.text" = "Pound";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "CV8-zk-9mF"; */
+"CV8-zk-9mF.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "E9X-JL-uAh"; */
+"E9X-JL-uAh.text" = "Label";
+
+/* Class = "UILabel"; text = "English"; ObjectID = "ErG-oF-i62"; */
+"ErG-oF-i62.text" = "English";
+
+/* Class = "UINavigationItem"; title = "Language"; ObjectID = "FXl-dl-lNa"; */
+"FXl-dl-lNa.title" = "Language";
+
+/* Class = "UIViewController"; title = "Volume"; ObjectID = "HNe-W3-uVR"; */
+"HNe-W3-uVR.title" = "Volume";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "JD1-0g-dO2"; */
+"JD1-0g-dO2.title" = "Item";
+
+/* Class = "UILabel"; text = "Symbol"; ObjectID = "JQ7-Qe-n6E"; */
+"JQ7-Qe-n6E.text" = "Symbol";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "KBY-e2-sBG"; */
+"KBY-e2-sBG.text" = "Label";
+
+/* Class = "UILabel"; text = "Precision"; ObjectID = "Ml5-yk-Dwz"; */
+"Ml5-yk-Dwz.text" = "Precision";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Oct-px-lLQ"; */
+"Oct-px-lLQ.text" = "Label";
+
+/* Class = "UILabel"; text = "Symbol"; ObjectID = "Ov4-Cs-PkL"; */
+"Ov4-Cs-PkL.text" = "Symbol";
+
+/* Class = "UIBarButtonItem"; title = "Settings"; ObjectID = "Ox1-Ek-Fdj"; */
+"Ox1-Ek-Fdj.title" = "Settings";
+
+/* Class = "UITabBarItem"; title = "Volume"; ObjectID = "R6s-qg-jqQ"; */
+"R6s-qg-jqQ.title" = "Volume";
+
+/* Class = "UILabel"; text = "Chinese"; ObjectID = "Rfk-dk-Gt5"; */
+"Rfk-dk-Gt5.text" = "Chinese";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "TbQ-jj-YyG"; */
+"TbQ-jj-YyG.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "VJ4-ef-Zfq"; */
+"VJ4-ef-Zfq.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Volume"; ObjectID = "Wm4-2K-rmh"; */
+"Wm4-2K-rmh.title" = "Volume";
+
+/* Class = "UITextField"; text = "1"; ObjectID = "XbJ-jZ-xfR"; */
+"XbJ-jZ-xfR.text" = "1";
+
+/* Class = "UILabel"; text = "Symbol"; ObjectID = "YiZ-tC-p0z"; */
+"YiZ-tC-p0z.text" = "Symbol";
+
+/* Class = "UITextField"; text = "1"; ObjectID = "Yu9-xb-4Nu"; */
+"Yu9-xb-4Nu.text" = "1";
+
+/* Class = "UINavigationItem"; title = "Temperature"; ObjectID = "ZoJ-00-s3x"; */
+"ZoJ-00-s3x.title" = "Temperature";
+
+/* Class = "UITabBarItem"; title = "Mass"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "Mass";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cbB-bv-Txn"; */
+"cbB-bv-Txn.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Length"; ObjectID = "d63-fs-mB7"; */
+"d63-fs-mB7.title" = "Length";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "gKl-rW-Vbi"; */
+"gKl-rW-Vbi.title" = "Settings";
+
+/* Class = "UINavigationItem"; title = "Add Unit"; ObjectID = "hV9-Et-mog"; */
+"hV9-Et-mog.title" = "Add Unit";
+
+/* Class = "UITabBarItem"; title = "Temperature"; ObjectID = "hrt-ol-qUj"; */
+"hrt-ol-qUj.title" = "Temperature";
+
+/* Class = "UILabel"; text = "English"; ObjectID = "iKy-II-f0G"; */
+"iKy-II-f0G.text" = "English";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "lQd-cD-MoI"; */
+"lQd-cD-MoI.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "lmK-QL-GCm"; */
+"lmK-QL-GCm.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Mass"; ObjectID = "mgD-zD-jn9"; */
+"mgD-zD-jn9.title" = "Mass";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "nR4-wY-hFu"; */
+"nR4-wY-hFu.text" = "Language";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nm4-Ts-7KD"; */
+"nm4-Ts-7KD.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "oUK-w7-Uv0"; */
+"oUK-w7-Uv0.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "psJ-fz-pYu"; */
+"psJ-fz-pYu.text" = "Label";
+
+/* Class = "UIViewController"; title = "Length"; ObjectID = "qcL-1H-wKh"; */
+"qcL-1H-wKh.title" = "Length";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "vfo-Sy-g5x"; */
+"vfo-Sy-g5x.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "vrV-sV-0FQ"; */
+"vrV-sV-0FQ.text" = "Label";
+
+/* Class = "UILabel"; text = "Symbol"; ObjectID = "xPS-j7-Y8B"; */
+"xPS-j7-Y8B.text" = "Symbol";
+
+/* Class = "UINavigationItem"; title = "Length"; ObjectID = "yYj-iE-J0V"; */
+"yYj-iE-J0V.title" = "Length";
+
+/* Class = "UITextField"; text = "1"; ObjectID = "yaW-W9-4pE"; */
+"yaW-W9-4pE.text" = "1";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "yyW-Ft-MHQ"; */
+"yyW-Ft-MHQ.text" = "1";
+
+/* Class = "UINavigationController"; title = "Length Nav"; ObjectID = "zg9-Zk-gpi"; */
+"zg9-Zk-gpi.title" = "Length Nav";

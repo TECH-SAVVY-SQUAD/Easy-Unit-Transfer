@@ -18,8 +18,8 @@ class AddWeightUintUITableViewCell: UITableViewCell {
     
     func loadCell(unit: Unit) {
         self.unit = unit
-        unitSymol.text = unit.symbol
-        unitName.text = unit.name
+        unitSymol.text = unit.symbol.localized()
+        unitName.text = unit.name.localized()
         unitCountryFlag.image = UIImage(named: unit.country.getString())
     }
 }

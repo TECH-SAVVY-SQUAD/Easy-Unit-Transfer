@@ -9,23 +9,6 @@
 import Foundation
 
 enum Category : Int {
-    case DEFAULT = 0
-    case WEIGHT, LENGTH, VOLUME, TEMPERATURE
-}
-
-enum Country: Int {
-    case DEFAULT = 0
-    case CN, US, UK
-    func getString() -> String {
-        switch self {
-        case .CN:
-            return "CN"
-        case .UK:
-            return "UK"
-        case .US:
-            return "US"
-        default:
-            return ""
-        }
-    }
+    case WEIGHT = 0
+    case LENGTH, VOLUME, TEMPERATURE
 }

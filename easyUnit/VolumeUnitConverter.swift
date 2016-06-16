@@ -12,7 +12,7 @@ class VolumeUnitConverter: Converter {
     static private var volumeUnitConverter = VolumeUnitConverter()
     
     private init() {
-        super.init(category: Category.VOLUME, sourceUnit: Units.volumeUnits.first!, sourceValue: 1, targetUnits: Units.volumeUnits.filter({$0.symbol == "Gal-US"}))
+        super.init(category: Category.VOLUME, sourceUnit: Units.volumeUnits.first!, sourceValue: 1, targetUnits: Units.volumeUnits.filter({$0.symbol == "GAL_US"}))
     }
     
     static func getInstance() -> VolumeUnitConverter {

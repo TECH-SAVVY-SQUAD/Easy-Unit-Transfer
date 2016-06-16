@@ -13,10 +13,7 @@ class TemperatureViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SrcUnitLabel.text = temperatureUnitConverter.sourceUnit.symbol
-        SrcUnitValue.text = NSString(format:"%.\(Config.getInstance().numberOfDigits)f", temperatureUnitConverter.sourceValue) as String
-        SrcUnitName.text = temperatureUnitConverter.sourceUnit.name
-        SrcUnitCountryFlag.image = UIImage(named: temperatureUnitConverter.sourceUnit.country.getString())
+        self.loadCurrentUnit()
         
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = UIColorUtil.blueRangeUIColor(temperatureUnitConverter.sourceValue)
@@ -26,6 +23,7 @@ class TemperatureViewController: UIViewController, UITableViewDelegate {
         // remove the navigation bar board
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.topItem?.title = "TEMPERATURE".localized()
     }
     
     @IBOutlet weak var tableView: UITableView!
@@ -49,6 +47,13 @@ class TemperatureViewController: UIViewController, UITableViewDelegate {
         }
     }
     
+    func loadCurrentUnit() {
+        SrcUnitLabel.text = temperatureUnitConverter.sourceUnit.symbol.localized()
+        SrcUnitValue.text = NSString(format:"%.\(Config.getInstance().numberOfDigits)f", temperatureUnitConverter.sourceValue) as String
+        SrcUnitCountryFlag.image = UIImage(named: temperatureUnitConverter.sourceUnit.country.getString())
+        SrcUnitName.text = temperatureUnitConverter.sourceUnit.name.localized()
+    }
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return temperatureUnitConverter.targetUnits.count
@@ -69,11 +74,8 @@ class TemperatureViewController: UIViewController, UITableViewDelegate {
         let cell : UnitCell? = self.tableView.cellForRowAtIndexPath(indexPath) as! UnitCell?
         if let unit = cell?.unit {
             if let value = cell?.value {
-                let newUnit = temperatureUnitConverter.switchSourceUnit(unit, value: value)
-                SrcUnitLabel.text = newUnit.symbol
-                SrcUnitValue.text = NSString(format:"%.\(Config.getInstance().numberOfDigits)f", temperatureUnitConverter.sourceValue) as String
-                SrcUnitName.text = newUnit.name
-                SrcUnitCountryFlag.image = UIImage(named: unit.country.getString())
+                temperatureUnitConverter.switchSourceUnit(unit, value: value)
+                self.loadCurrentUnit()
                 tableView.reloadData()
             }
         }

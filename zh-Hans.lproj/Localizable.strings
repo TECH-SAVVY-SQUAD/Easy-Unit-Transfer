@@ -1,0 +1,90 @@
+/* 
+  Localizable.strings
+  easyUnit
+ 
+  Chinese localization.
+
+  Created by Wu on 6/10/16.
+  Copyright © 2016 Jiadong Wu. All rights reserved.
+*/
+// Chinese translation for settings.
+"SETTINGS" = "设置";
+"LANGUAGE" = "语言";
+"PRECISION" = "精确度";
+"CHINESE" = "中文";
+"ENGLISH" = "英文";
+"DELETE" = " 删除 ";
+
+// Language translation for temperature.
+"TEMPERATURE" = "温度单位";
+"CELSIUS" = "摄氏度";
+"FAHRENHEIT" = "华氏度";
+"KELVIN" = "开尔文";
+"˚C" = "˚C";
+"˚F" = "˚F";
+"K" = "K";
+
+// Chinese for weight unit
+"MASS" = "质量单位";
+"KG" = "Kg";
+"KILOGRAM" = "千克";
+"G" = "G";
+"GRAM" = "克";
+"T" = "T";
+"TON" = "吨";
+"OZ" = "OZ";
+"OUNCE" = "盎司";
+"LB" = "LB";
+"POUND" = "磅";
+"CWT" = "CWT";
+"US_HUNDREDWEIGHT" = "英担-英制";
+"TON_US" = "Ton-US";
+"SHORT_TON" = "短吨-美制";
+"ST" = "ST";
+"STONE" = "石";
+"TON_UK" = "Ton-UK";
+"LONG_TON" = "长吨-英制";
+
+// Chinese translation for weight.
+"LENGTH" = "长度单位";
+"M" = "M";
+"METER" = "米";
+"MM" = "MM";
+"MILLIMETER" = "毫米";
+"CM" = "CM";
+"CENTIMETER" = "厘米";
+"KM" = "KM";
+"KILOMETER" = "千米";
+"IN" = "IN";
+"INCH" = "英寸";
+"FT" = "FT";
+"FOOT" = "英尺";
+"YD" = "YD";
+"YARD" = "码";
+"MI" = "MI";
+"MILE" = "迈";
+
+// Chinese translation for volume.
+"VOLUME" = "体积单位";
+"L" = "L";
+"LITRE" = "升";
+"ML" = "ML";
+"MILLILITRE" = "毫升";
+"TSP" = "TSP";
+"TEASPOON" = "茶匙";
+"TBSP" = "TBSP";
+"TABLESPOON" = "汤匙";
+"FL_OZ" = "Fl oz";
+"US_FLUID_OUNCE" = "液量盎司-美制";
+"GI" = "GI";
+"US_GILL" = "及耳-美制";
+"PT" = "PT";
+"US_PINT" = "品脱-美制";
+"QT" = "QT";
+"US_QUART" = "夸脱-美制";
+"GAL_US" = "GAL-US";
+"US_GALLON" = "加仑-美制";
+"BBL" = "BBL";
+"BARREL" = "桶";
+"GAL_UK" = "GAL-UK";
+"UK_GALLON" = "加仑-英制";

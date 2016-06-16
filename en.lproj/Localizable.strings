@@ -1,0 +1,90 @@
+/* 
+  Localizable.strings
+  easyUnit
+
+  English localization.
+ 
+  Created by Wu on 6/10/16.
+  Copyright © 2016 Jiadong Wu. All rights reserved.
+*/
+// English translation for settings.
+"SETTINGS" = "Settings";
+"LANGUAGE" = "Language";
+"PRECISION" = "Precision";
+"CHINESE" = "Chinese";
+"ENGLISH" = "English";
+"DELETE" = "Delete";
+
+// English translation for temperature.
+"TEMPERATURE" = "Temperature";
+"CELSIUS" = "Celsius";
+"FAHRENHEIT" = "Fahrenheit";
+"KELVIN" = "Kelvin";
+"˚C" = "˚C";
+"˚F" = "˚F";
+"K" = "K";
+
+// English translation for weight.
+"MASS" = "Mass";
+"KG" = "Kg";
+"KILOGRAM" = "Kilogram";
+"G" = "G";
+"GRAM" = "Gram";
+"T" = "T";
+"TON" = "Ton";
+"OZ" = "OZ";
+"OUNCE" = "Ounce";
+"LB" = "LB";
+"POUND" = "Pound";
+"CWT" = "CWT";
+"US_HUNDREDWEIGHT" = "US Hundred Weight";
+"TON_US" = "Ton-US";
+"SHORT_TON" = "Short ton";
+"ST" = "ST";
+"STONE" = "Stone";
+"TON_UK" = "Ton-UK";
+"LONG_TON" = "Long ton";
+
+// English translation for distance.
+"LENGTH" = "Length";
+"M" = "M";
+"METER" = "Meter";
+"MM" = "MM";
+"MILLIMETER" = "Millimeter";
+"CM" = "CM";
+"CENTIMETER" = "Centimeter";
+"KM" = "KM";
+"KILOMETER" = "Kilometer";
+"IN" = "IN";
+"INCH" = "Inch";
+"FT" = "FT";
+"FOOT" = "Foot";
+"YD" = "YD";
+"YARD" = "Yard";
+"MI" = "MI";
+"MILE" = "Mile";
+
+// English translation for volume.
+"VOLUME" = "Volume";
+"L" = "L";
+"LITRE" = "Litre";
+"ML" = "ML";
+"MILLILITRE" = "Millilitre";
+"TSP" = "TSP";
+"TEASPOON" = "Teaspoon";
+"TBSP" = "TBSP";
+"TABLESPOON" = "Tablespoon";
+"FL_OZ" = "Fl oz";
+"US_FLUID_OUNCE" = "US fluid ounce";
+"GI" = "GI";
+"US_GILL" = "US gill";
+"PT" = "PT";
+"US_PINT" = "US pint";
+"QT" = "QT";
+"US_QUART" = "US quart";
+"GAL_US" = "GAL-US";
+"US_GALLON" = "US gallon";
+"BBL" = "BBL";
+"BARREL" = "Barrel";
+"GAL_UK" = "GAL-UK";
+"UK_GALLON" = "UK gallon";

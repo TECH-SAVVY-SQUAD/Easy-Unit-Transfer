@@ -33,6 +33,8 @@ class WeightViewController: UIViewController, UITableViewDelegate {
         // remove the navigation bar board
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        self.navigationController?.navigationBar.topItem?.title = "MASS".localized()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,15 +44,16 @@ class WeightViewController: UIViewController, UITableViewDelegate {
     
     func loadCurrentUnit() {
         // TODO add a sperate class for the upper view, load it in anywhere
-        currentUnitUILabel.text = weightConverter.sourceUnit.symbol
+        currentUnitUILabel.text = weightConverter.sourceUnit.symbol.localized()
         currentValueUITextField.text = NSString(format:"%.\(Config.getInstance().numberOfDigits)f", weightConverter.sourceValue) as String
-        currentUnitName.text = weightConverter.sourceUnit.name
+        currentUnitName.text = weightConverter.sourceUnit.name.localized()
         currentUnitCoutryFlag.image = UIImage(named: weightConverter.sourceUnit.country.getString())
     }
     
     override func viewDidAppear(animated: Bool) {
         self.loadCurrentUnit()
         tableView.reloadData()
+        self.navigationController?.navigationBar.topItem?.title = "MASS".localized()
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,11 +75,8 @@ class WeightViewController: UIViewController, UITableViewDelegate {
         let cell : UnitCell? = self.tableView.cellForRowAtIndexPath(indexPath) as! UnitCell?
         if let unit = cell?.unit {
             if let value = cell?.value {
-                let newUnit = weightConverter.switchSourceUnit(unit, value: value)
-                currentUnitUILabel.text = newUnit.symbol
-                currentValueUITextField.text = NSString(format:"%.\(Config.getInstance().numberOfDigits)f", weightConverter.sourceValue) as String
-                currentUnitName.text = newUnit.name
-                currentUnitCoutryFlag.image = UIImage(named: newUnit.country.getString())
+                weightConverter.switchSourceUnit(unit, value: value)
+                self.loadCurrentUnit()
                 tableView.reloadData()
             }
         }
@@ -98,7 +98,7 @@ class WeightViewController: UIViewController, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let deleteButton = UITableViewRowAction(style: .Default, title: "Delete", handler: { (action, indexPath) in
+        let deleteButton = UITableViewRowAction(style: .Default, title: "DELETE".localized(), handler: { (action, indexPath) in
             self.tableView.dataSource?.tableView?(
                 self.tableView,
                 commitEditingStyle: .Delete,

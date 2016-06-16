@@ -17,9 +17,6 @@ class Unit {
     private(set) var to: (Double)-> Double
     private(set) var country: Country
     
-    convenience init() {
-        self.init(symbol: "", name: "", category: Category.DEFAULT, description: "", from: {$0}, to: {$0}, country: Country.DEFAULT)
-    }
     
     init(symbol: String, name: String,category: Category, description: String = "", from: (Double)->Double, to: (Double)->Double, country: Country) {
         self.symbol = symbol
